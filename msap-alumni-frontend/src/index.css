@@ -213,12 +213,6 @@
   }
 
   /* Section Highlight Accents */
-  .section-glow-bar {
-    height: 2px;
-    width: 100%;
-    background: linear-gradient(90deg, transparent 0%, rgba(58, 27, 115, 0.25) 20%, #4E2D92 50%, rgba(58, 27, 115, 0.25) 80%, transparent 100%);
-  }
-
   .section-highlight-card {
     position: relative;
     background-color: var(--bg-card);
@@ -226,17 +220,6 @@
     border-radius: 1.75rem;
     box-shadow: 0 12px 35px -10px rgba(58, 27, 115, 0.14);
     overflow: hidden;
-  }
-
-  .section-highlight-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 8%;
-    right: 8%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--lavender-dark), var(--primary), var(--gold), transparent);
-    border-radius: 3px;
   }
 
   .badge-highlight {

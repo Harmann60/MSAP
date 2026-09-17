@@ -49,10 +49,7 @@ const EVENTS = [
 
 export default function EventsSection() {
   return (
-    <section className="relative bg-section-alt border-y-2 border-lavender/30 py-16 md:py-24">
-      <div className="section-glow-bar absolute top-0 inset-x-0" />
-      <div className="section-glow-bar absolute bottom-0 inset-x-0" />
-
+    <section className="relative bg-section-alt border-y border-main py-16 md:py-24">
       <div className="relative max-w-6xl mx-auto px-5">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>

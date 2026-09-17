@@ -147,7 +147,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-card/95 backdrop-blur-md text-ink sticky top-0 z-50 border-b-2 border-lavender/25 shadow-[0_4px_20px_-4px_rgba(58,27,115,0.08)]">
+      <nav className="bg-card/95 backdrop-blur-md text-ink sticky top-0 z-50 border-b border-main shadow-xs">
         <div className="max-w-6xl mx-auto px-5">
           <div className="flex justify-between items-center h-18">
             {/* Brand Logo */}

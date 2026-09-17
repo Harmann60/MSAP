@@ -9,23 +9,14 @@ export default function HomePage() {
     <div>
       <HeroSection />
 
-      {/* Cultural Meitei Mayek divider with dark lavender glow */}
-      <div className="max-w-6xl mx-auto px-5 py-8">
-        <div className="section-glow-bar mb-6" />
-        <div className="meitei-rule text-lavender-dark">
-          <div className="meitei-rule-diamond bg-lavender shadow-[0_0_12px_rgba(78,45,146,0.4)]" />
-        </div>
-      </div>
-
       <StoriesSection />
 
       <EventsSection />
 
       <CommunitySection />
 
-      {/* Elevated Join / Register Highlight Section */}
-      <section className="relative py-20 md:py-28 overflow-hidden bg-section-alt border-t-2 border-lavender/30">
-        <div className="section-glow-bar absolute top-0 inset-x-0" />
+      {/* Elevated Join / Register Section */}
+      <section className="relative py-20 md:py-28 overflow-hidden bg-section-alt border-t border-main">
         <div className="relative max-w-4xl mx-auto px-5">
           <div className="section-highlight-card p-8 sm:p-14 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-page border-1.5 border-lavender/40 text-lavender-dark text-xs font-bold uppercase tracking-wider mb-5 shadow-sm">
