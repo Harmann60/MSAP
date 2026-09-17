@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 
 export default function HeroSection() {
   return (
-    <div className="relative bg-page text-ink overflow-hidden border-b border-main">
+    <div className="relative bg-page text-ink overflow-hidden border-b-2 border-lavender/25">
       <div className="relative max-w-6xl mx-auto px-5 py-16 md:py-24 lg:py-28">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           {/* Left copy */}
           <div className="lg:col-span-7 animate-heroIn">
             {/* Golden Jubilee & Heritage Pill */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-card border border-main text-lavender text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-card border-1.5 border-lavender/35 text-lavender-dark text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lavender opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-lavender" />
@@ -19,7 +19,7 @@ export default function HeroSection() {
             <h1 className="font-display text-ink text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.12] mb-6 font-semibold">
               For 50 years, Manipuri students came to Pune.
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-lavender to-lavender-light italic font-medium">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-lavender-dark via-lavender to-lavender-light italic font-medium">
                 This is where we stay connected.
               </span>
             </h1>
@@ -31,7 +31,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 to="/register"
-                className="group relative inline-flex items-center gap-2.5 bg-lavender hover:bg-lavender-dark text-white font-bold px-8 py-4 rounded-xl shadow-[0_8px_25px_rgba(78,45,146,0.3)] transition-all text-base hover:-translate-y-0.5 active:translate-y-0"
+                className="group relative inline-flex items-center gap-2.5 bg-lavender hover:bg-lavender-dark text-white font-bold px-8 py-4 rounded-xl shadow-[0_8px_25px_rgba(78,45,146,0.35)] transition-all text-base hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>Register for Verification</span>
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -40,32 +40,32 @@ export default function HeroSection() {
               </Link>
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 bg-card hover:bg-card-hover border-2 border-main hover:border-lavender text-stone hover:text-ink font-bold px-7 py-4 rounded-xl transition-all text-base hover:-translate-y-0.5 shadow-sm"
+                className="inline-flex items-center gap-2 bg-card hover:bg-card-hover border-2 border-lavender/30 hover:border-lavender text-stone hover:text-ink font-bold px-7 py-4 rounded-xl transition-all text-base hover:-translate-y-0.5 shadow-sm"
               >
                 <span>Our Heritage</span>
               </Link>
             </div>
 
-            {/* High-fidelity stats grid */}
-            <div className="mt-12 pt-8 border-t border-main grid grid-cols-3 gap-4 sm:gap-6 max-w-lg">
-              <div className="bg-card p-3.5 rounded-2xl border border-main shadow-2xs">
+            {/* High-fidelity stats grid with dark lavender highlights */}
+            <div className="mt-12 pt-8 border-t border-lavender/25 grid grid-cols-3 gap-4 sm:gap-6 max-w-lg">
+              <div className="bg-card p-4 rounded-2xl border-1.5 border-lavender/25 hover:border-lavender/50 shadow-[0_4px_16px_rgba(58,27,115,0.06)] transition-all">
                 <div className="font-display text-2xl sm:text-3xl font-bold text-ink">50+</div>
                 <div className="text-[11px] sm:text-xs text-muted font-bold uppercase tracking-wider mt-0.5">Years Legacy</div>
               </div>
-              <div className="bg-card p-3.5 rounded-2xl border border-main shadow-2xs">
-                <div className="font-display text-2xl sm:text-3xl font-bold text-lavender">2,000+</div>
+              <div className="bg-card p-4 rounded-2xl border-1.5 border-lavender/25 hover:border-lavender/50 shadow-[0_4px_16px_rgba(58,27,115,0.06)] transition-all">
+                <div className="font-display text-2xl sm:text-3xl font-bold text-lavender-dark">2,000+</div>
                 <div className="text-[11px] sm:text-xs text-muted font-bold uppercase tracking-wider mt-0.5">Alumni Global</div>
               </div>
-              <div className="bg-card p-3.5 rounded-2xl border border-main shadow-2xs">
+              <div className="bg-card p-4 rounded-2xl border-1.5 border-lavender/25 hover:border-lavender/50 shadow-[0_4px_16px_rgba(58,27,115,0.06)] transition-all">
                 <div className="font-display text-2xl sm:text-3xl font-bold text-ink">Annual</div>
                 <div className="text-[11px] sm:text-xs text-muted font-bold uppercase tracking-wider mt-0.5">Meets & Events</div>
               </div>
             </div>
           </div>
 
-          {/* Right: Media showcase card */}
+          {/* Right: Media showcase card with dark lavender highlight */}
           <div className="lg:col-span-5 animate-heroInDelay">
-            <div className="relative rounded-3xl p-2 bg-card border border-main shadow-lg">
+            <div className="relative rounded-3xl p-2.5 bg-card border-2 border-lavender/35 shadow-[0_20px_50px_-10px_rgba(58,27,115,0.22)] hover:border-lavender/60 transition-all">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-ink shadow-inner group">
                 <video
                   autoPlay muted loop playsInline preload="auto"

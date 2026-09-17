@@ -147,7 +147,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-card/95 backdrop-blur-md text-ink sticky top-0 z-50 border-b border-main shadow-sm">
+      <nav className="bg-card/95 backdrop-blur-md text-ink sticky top-0 z-50 border-b-2 border-lavender/25 shadow-[0_4px_20px_-4px_rgba(58,27,115,0.08)]">
         <div className="max-w-6xl mx-auto px-5">
           <div className="flex justify-between items-center h-18">
             {/* Brand Logo */}
@@ -199,7 +199,7 @@ export default function Navbar() {
 
                   {/* Mega Menu Dropdown */}
                   {activeMega === idx && (
-                    <div className="absolute top-[90%] left-1/2 -translate-x-1/2 w-[520px] bg-card border border-main shadow-[0_20px_50px_rgba(24,18,36,0.14)] rounded-3xl overflow-hidden z-50 animate-heroIn">
+                    <div className="absolute top-[90%] left-1/2 -translate-x-1/2 w-[520px] bg-card border-2 border-lavender/35 shadow-[0_20px_50px_rgba(58,27,115,0.18)] rounded-3xl overflow-hidden z-50 animate-heroIn">
                       <div className="grid grid-cols-2 gap-0 p-6">
                         {item.children.map((group, gi) => (
                           <div key={gi} className={gi > 0 ? 'pl-6 border-l border-main' : ''}>

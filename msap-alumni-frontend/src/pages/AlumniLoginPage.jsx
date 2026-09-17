@@ -156,7 +156,7 @@ export default function AlumniLoginPage() {
 
       {/* Login Card */}
       <div className="w-full max-w-md animate-heroInDelay">
-        <div className="border border-main bg-card rounded-3xl shadow-[0_20px_60px_-15px_rgba(24,18,36,0.12)] overflow-hidden">
+        <div className="border-2 border-lavender/35 bg-card rounded-3xl shadow-[0_20px_60px_-15px_rgba(58,27,115,0.18)] overflow-hidden">
           {/* Segmented Mode Switcher */}
           <div className="p-3 bg-section-alt border-b border-main grid grid-cols-2 gap-2">
             <button

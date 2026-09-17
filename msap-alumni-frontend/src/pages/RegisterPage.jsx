@@ -88,7 +88,7 @@ export default function RegisterPage() {
   if (submitted) {
     return (
       <div className="relative bg-page min-h-[85vh] flex items-center justify-center px-5 py-16">
-        <div className="relative max-w-lg w-full text-center p-8 sm:p-10 bg-card border border-main rounded-3xl shadow-[0_20px_60px_-15px_rgba(24,18,36,0.12)] animate-heroIn">
+        <div className="relative max-w-lg w-full text-center p-8 sm:p-10 bg-card border-2 border-lavender/35 rounded-3xl shadow-[0_20px_60px_-15px_rgba(58,27,115,0.18)] animate-heroIn">
           <div className="w-16 h-16 rounded-2xl bg-emerald-100/70 text-emerald-700 border border-emerald-300 flex items-center justify-center text-3xl font-bold mx-auto mb-5 shadow-sm">
             ✓
           </div>
@@ -168,7 +168,7 @@ export default function RegisterPage() {
       </div>
 
       <div className="relative max-w-3xl mx-auto px-5">
-        <div className="bg-card border border-main rounded-3xl shadow-[0_20px_60px_-15px_rgba(24,18,36,0.1)] overflow-hidden">
+        <div className="bg-card border-2 border-lavender/35 rounded-3xl shadow-[0_20px_60px_-15px_rgba(58,27,115,0.18)] overflow-hidden">
           {/* Card Top Banner */}
           <div className="p-6 sm:p-8 bg-section-alt border-b border-main flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>

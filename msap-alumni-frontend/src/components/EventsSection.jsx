@@ -49,11 +49,14 @@ const EVENTS = [
 
 export default function EventsSection() {
   return (
-    <section className="relative bg-section-alt border-y border-main py-16 md:py-24">
+    <section className="relative bg-section-alt border-y-2 border-lavender/30 py-16 md:py-24">
+      <div className="section-glow-bar absolute top-0 inset-x-0" />
+      <div className="section-glow-bar absolute bottom-0 inset-x-0" />
+
       <div className="relative max-w-6xl mx-auto px-5">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-card border border-main text-lavender text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-card border-1.5 border-lavender/35 text-lavender-dark text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
               <span>🗓</span> Calendar of Gatherings
             </div>
             <h2 className="font-display text-ink text-3xl sm:text-4xl font-bold tracking-tight">
@@ -65,7 +68,7 @@ export default function EventsSection() {
           </div>
           <Link
             to="/events"
-            className="group inline-flex items-center gap-2 text-lavender font-bold text-sm hover:text-lavender-dark transition-colors shrink-0"
+            className="group inline-flex items-center gap-2 text-lavender-dark font-bold text-sm hover:text-lavender transition-colors shrink-0"
           >
             <span>Explore full calendar</span>
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -79,16 +82,16 @@ export default function EventsSection() {
             <Link
               key={event.id}
               to="/events"
-              className="group card-lift bg-card border border-main hover:border-lavender/50 p-6 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="group card-lift bg-card border-1.5 border-lavender/25 hover:border-lavender/70 p-6 rounded-3xl shadow-[0_4px_20px_-4px_rgba(58,27,115,0.08)] hover:shadow-[0_20px_40px_-10px_rgba(58,27,115,0.22)] transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Header with Calendar block and category */}
+                {/* Header with Dark Lavender Calendar block and category */}
                 <div className="flex items-start justify-between gap-3 mb-5">
-                  <div className="flex flex-col items-center justify-center w-14 h-14 rounded-2xl bg-page border border-main text-center shrink-0 group-hover:bg-lavender group-hover:text-white transition-colors duration-300">
-                    <span className="text-[10px] font-bold tracking-widest uppercase block leading-none text-lavender group-hover:text-white/90">
+                  <div className="flex flex-col items-center justify-center w-14 h-14 rounded-2xl bg-lavender-dark text-white border border-lavender/40 text-center shrink-0 shadow-sm group-hover:scale-105 transition-all duration-300">
+                    <span className="text-[10px] font-bold tracking-widest uppercase block leading-none text-gold-soft">
                       {event.month}
                     </span>
-                    <span className="text-xl font-display font-extrabold leading-tight mt-0.5">
+                    <span className="text-xl font-display font-extrabold leading-tight mt-0.5 text-white">
                       {event.day}
                     </span>
                   </div>
@@ -110,7 +113,7 @@ export default function EventsSection() {
                 </div>
               </div>
 
-              <div className="pt-4 mt-2 border-t border-main text-xs font-bold text-lavender flex items-center justify-between">
+              <div className="pt-4 mt-2 border-t border-lavender/20 text-xs font-bold text-lavender-dark group-hover:text-lavender transition-colors flex items-center justify-between">
                 <span>View Details & RSVP</span>
                 <span className="group-hover:translate-x-1.5 transition-transform text-base">→</span>
               </div>

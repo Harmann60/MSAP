@@ -11,12 +11,12 @@ const CHAPTERS = [
 
 export default function CommunitySection() {
   return (
-    <section className="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <section className="relative max-w-6xl mx-auto px-5 py-16 md:py-24">
       <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-        {/* Left: statement card */}
-        <div className="lg:col-span-5 bg-card border border-main p-8 sm:p-10 rounded-3xl shadow-sm relative overflow-hidden">
+        {/* Left: highlighted statement card */}
+        <div className="lg:col-span-5 section-highlight-card p-8 sm:p-10 relative overflow-hidden">
           <div className="relative">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-page text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-main">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-page text-lavender-dark text-xs font-bold uppercase tracking-wider mb-4 border-1.5 border-lavender/35 shadow-sm">
               <span>🤝</span> Regional Chapters & Networks
             </div>
 
@@ -49,10 +49,10 @@ export default function CommunitySection() {
               <Link
                 key={idx}
                 to="/community"
-                className="group card-lift flex items-center justify-between p-4.5 bg-card border border-main hover:border-lavender/50 rounded-2xl transition-all shadow-sm hover:shadow-lg"
+                className="group card-lift flex items-center justify-between p-4.5 bg-card border-1.5 border-lavender/25 hover:border-lavender/70 rounded-2xl transition-all shadow-[0_4px_16px_rgba(58,27,115,0.06)] hover:shadow-[0_16px_32px_-8px_rgba(58,27,115,0.2)]"
               >
                 <div className="flex items-center gap-3.5">
-                  <span className="w-11 h-11 rounded-xl bg-page text-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <span className="w-11 h-11 rounded-xl bg-page border border-lavender/25 text-xl flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:border-lavender transition-all">
                     {chapter.icon}
                   </span>
                   <div>
@@ -61,14 +61,14 @@ export default function CommunitySection() {
                     </h3>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-[11px] text-muted font-medium">{chapter.region}</span>
-                      <span className="text-[10px] text-lavender font-semibold bg-lavender-soft px-2 py-0.5 rounded-full border border-lavender/25">
+                      <span className="text-[10px] text-lavender-dark font-bold bg-lavender-soft px-2.5 py-0.5 rounded-full border border-lavender/30">
                         {chapter.members}
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <div className="w-7 h-7 rounded-full bg-page flex items-center justify-center text-muted group-hover:bg-lavender group-hover:text-white transition-colors shrink-0 ml-2">
+                <div className="w-7 h-7 rounded-full bg-page border border-lavender/25 flex items-center justify-center text-muted group-hover:bg-lavender group-hover:text-white group-hover:border-lavender transition-all shrink-0 ml-2">
                   <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>

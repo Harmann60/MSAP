@@ -13,16 +13,25 @@
   --bg-card-hover: #FFFFFF;     /* Card surface on hover */
   --bg-subtle: #E8E2D5;         /* Pill tags, secondary badges, table footers */
 
+  /* --- Dark Lavender Brand & Structural Highlights --- */
+  --lavender-dark: #3A1B73;       /* Rich dark royal lavender */
+  --lavender-deep: #25104E;       /* Deep midnight lavender for contrast */
+  --lavender-highlight: #5A35A8;  /* Vibrant lavender highlight */
+  --lavender-soft: #EAE3F7;       /* Soft lavender tint for badges & icons */
+  --lavender-border: rgba(58, 27, 115, 0.22);       /* Subtle dark lavender card & section border */
+  --lavender-border-strong: rgba(58, 27, 115, 0.50);/* Emphasized dark lavender highlight */
+
   /* --- Structural Borders --- */
-  --border-main: #D2C8B8;       /* Primary borders around cards, sections, headers */
-  --border-subtle: #DCD4C6;     /* Lighter internal dividers, table cell lines */
-  --border-focus: #4E2D92;      /* Input focus ring and selected tab highlight */
+  --border-main: rgba(58, 27, 115, 0.18);       /* Dark lavender tinted structural border */
+  --border-subtle: rgba(58, 27, 115, 0.10);     /* Lighter internal dividers */
+  --border-highlight: var(--lavender-border);
+  --border-focus: #4E2D92;                      /* Input focus ring and selected tab highlight */
 
   /* --- Primary Brand (Royal Purple / Lavender) --- */
   --primary: #4E2D92;           /* Main buttons, brand highlights, active states */
   --primary-hover: #3A1B73;     /* Button hover state */
   --primary-light: #6540B2;     /* Subtle gradients and secondary accents */
-  --primary-soft: #E4DCF5;      /* Soft tint for badges and icon backgrounds */
+  --primary-soft: #EAE3F7;      /* Soft tint for badges and icon backgrounds */
   --primary-border: #BAA9DD;    /* Border on primary badges */
 
   /* --- Heritage Gold Accent --- */
@@ -57,6 +66,7 @@
 
   --color-border-main: var(--border-main);
   --color-border-subtle: var(--border-subtle);
+  --color-border-highlight: var(--lavender-border-strong);
 
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
@@ -79,11 +89,12 @@
   --color-parchment-dark: var(--border-main);
 
   --color-lavender: var(--primary);
-  --color-lavender-dark: var(--primary-hover);
+  --color-lavender-dark: var(--lavender-dark);
+  --color-lavender-deep: var(--lavender-deep);
   --color-lavender-light: var(--primary-light);
   --color-lavender-soft: var(--primary-soft);
   --color-lavender-subtle: var(--bg-section-alt);
-  --color-lavender-border: var(--primary-border);
+  --color-lavender-border: var(--lavender-border);
 
   --color-ink: var(--text-main);
   --color-stone: var(--text-body);
@@ -179,6 +190,12 @@
   .border-subtle {
     border-color: var(--border-subtle);
   }
+  .border-highlight {
+    border-color: var(--lavender-border);
+  }
+  .border-highlight-strong {
+    border-color: var(--lavender-border-strong);
+  }
   .text-main {
     color: var(--text-main);
   }
@@ -195,13 +212,59 @@
     background-color: var(--primary);
   }
 
+  /* Section Highlight Accents */
+  .section-glow-bar {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(58, 27, 115, 0.25) 20%, #4E2D92 50%, rgba(58, 27, 115, 0.25) 80%, transparent 100%);
+  }
+
+  .section-highlight-card {
+    position: relative;
+    background-color: var(--bg-card);
+    border: 1.5px solid var(--lavender-border);
+    border-radius: 1.75rem;
+    box-shadow: 0 12px 35px -10px rgba(58, 27, 115, 0.14);
+    overflow: hidden;
+  }
+
+  .section-highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 8%;
+    right: 8%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--lavender-dark), var(--primary), var(--gold), transparent);
+    border-radius: 3px;
+  }
+
+  .badge-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 9999px;
+    background-color: var(--bg-card);
+    border: 1.5px solid var(--lavender-border);
+    color: var(--lavender-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 8px rgba(58, 27, 115, 0.08);
+  }
+
   /* Card and Button micro-interactions */
   .card-lift {
+    border: 1.5px solid var(--lavender-border);
+    box-shadow: 0 4px 20px -4px rgba(58, 27, 115, 0.08);
     transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
   }
   .card-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 32px -8px rgba(24, 18, 36, 0.12);
+    border-color: var(--lavender-border-strong);
+    box-shadow: 0 16px 36px -8px rgba(58, 27, 115, 0.20);
   }
 
   .btn-hover {
@@ -238,22 +301,24 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    opacity: 0.45;
+    opacity: 0.65;
+    color: var(--lavender-dark);
   }
 
   .meitei-rule::before,
   .meitei-rule::after {
     content: '';
     flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, currentColor 20%, currentColor 80%, transparent);
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, currentColor 25%, currentColor 75%, transparent);
   }
 
   .meitei-rule-diamond {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
     background: currentColor;
     transform: rotate(45deg);
     flex-shrink: 0;
+    box-shadow: 0 0 8px rgba(58, 27, 115, 0.3);
   }
 }
