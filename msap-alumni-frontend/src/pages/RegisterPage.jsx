@@ -24,7 +24,7 @@ function FormField({ label, name, type = 'text', placeholder, required, value, o
           onChange={onChange}
           placeholder={placeholder}
           required={required}
-          className={`w-full border border-[#D2C8B8] bg-white ${
+          className={`w-full border border-main bg-white ${
             icon ? 'pl-10' : 'pl-4'
           } pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50 shadow-2xs`}
         />
@@ -87,10 +87,8 @@ export default function RegisterPage() {
 
   if (submitted) {
     return (
-      <div className="relative bg-[#EDE8DE] min-h-[85vh] flex items-center justify-center px-5 py-16">
-        <div className="absolute top-10 left-1/3 w-80 h-80 bg-lavender/10 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="relative max-w-lg w-full text-center p-8 sm:p-10 bg-[#F9F7F2] border border-[#D2C8B8] rounded-3xl shadow-[0_20px_60px_-15px_rgba(24,18,36,0.12)] animate-heroIn">
+      <div className="relative bg-page min-h-[85vh] flex items-center justify-center px-5 py-16">
+        <div className="relative max-w-lg w-full text-center p-8 sm:p-10 bg-card border border-main rounded-3xl shadow-[0_20px_60px_-15px_rgba(24,18,36,0.12)] animate-heroIn">
           <div className="w-16 h-16 rounded-2xl bg-emerald-100/70 text-emerald-700 border border-emerald-300 flex items-center justify-center text-3xl font-bold mx-auto mb-5 shadow-sm">
             ✓
           </div>
@@ -107,7 +105,7 @@ export default function RegisterPage() {
             Thank you, <strong className="text-ink">{formData.fullName}</strong>. Your account credentials have been securely stored. Our administrator will verify your Pune college alumni credentials within <span className="font-semibold text-lavender">2–3 business days</span>.
           </p>
 
-          <div className="p-4 rounded-2xl bg-[#EDE8DE] border border-[#D2C8B8] text-left text-xs space-y-2 mb-8">
+          <div className="p-4 rounded-2xl bg-page border border-main text-left text-xs space-y-2 mb-8">
             <div className="flex items-center gap-2 text-stone font-semibold">
               <span>📧 Confirmation Sent:</span>
               <span className="text-ink">{formData.email}</span>
@@ -152,17 +150,13 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="relative bg-[#EDE8DE] min-h-[90vh] py-14 sm:py-20 overflow-hidden">
-      {/* Ambient background glows */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-lavender/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-80 h-80 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
-
+    <div className="relative bg-page min-h-[90vh] py-14 sm:py-20 overflow-hidden">
       {/* Header */}
       <div className="relative max-w-4xl mx-auto px-5 text-center mb-10">
         <div className="w-16 h-16 mx-auto mb-3">
           <img src="/logo.png" alt="MSAP Alumni" className="w-full h-full object-contain drop-shadow-sm" />
         </div>
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F9F7F2] text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-[#D2C8B8]">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-card text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-main">
           <span>🎓</span> Official Alumni Verification
         </div>
         <h1 className="font-display text-ink text-3xl sm:text-5xl font-bold tracking-tight mb-3">
@@ -174,9 +168,9 @@ export default function RegisterPage() {
       </div>
 
       <div className="relative max-w-3xl mx-auto px-5">
-        <div className="bg-[#F9F7F2] border border-[#D2C8B8] rounded-3xl shadow-[0_20px_60px_-15px_rgba(24,18,36,0.1)] overflow-hidden">
+        <div className="bg-card border border-main rounded-3xl shadow-[0_20px_60px_-15px_rgba(24,18,36,0.1)] overflow-hidden">
           {/* Card Top Banner */}
-          <div className="p-6 sm:p-8 bg-[#E5DFD1] border-b border-[#D2C8B8] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="p-6 sm:p-8 bg-section-alt border-b border-main flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <h2 className="font-display text-ink text-2xl font-bold">
                 Alumni Registration Form
@@ -185,7 +179,7 @@ export default function RegisterPage() {
                 Submissions are reviewed by the MSAP executive committee for verified credentials.
               </p>
             </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F9F7F2] border border-[#D2C8B8] text-[11px] font-bold text-lavender shadow-2xs self-start sm:self-auto">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-card border border-main text-[11px] font-bold text-lavender shadow-2xs self-start sm:self-auto">
               <span>🔒</span> 256-Bit Encrypted
             </div>
           </div>
@@ -212,7 +206,7 @@ export default function RegisterPage() {
 
             {/* Section 1: Personal Details */}
             <div>
-              <div className="flex items-center gap-2 pb-2 mb-4 border-b border-[#D2C8B8] text-xs font-bold uppercase tracking-wider text-lavender">
+              <div className="flex items-center gap-2 pb-2 mb-4 border-b border-main text-xs font-bold uppercase tracking-wider text-lavender">
                 <span>01</span>
                 <span>Personal Information</span>
               </div>
@@ -252,7 +246,7 @@ export default function RegisterPage() {
 
             {/* Section 2: Pune Academic History */}
             <div>
-              <div className="flex items-center gap-2 pb-2 mb-4 border-b border-[#D2C8B8] text-xs font-bold uppercase tracking-wider text-lavender">
+              <div className="flex items-center gap-2 pb-2 mb-4 border-b border-main text-xs font-bold uppercase tracking-wider text-lavender">
                 <span>02</span>
                 <span>Pune Academic Experience</span>
               </div>
@@ -297,7 +291,7 @@ export default function RegisterPage() {
 
             {/* Section 3: Account Password */}
             <div>
-              <div className="flex items-center justify-between pb-2 mb-4 border-b border-[#D2C8B8]">
+              <div className="flex items-center justify-between pb-2 mb-4 border-b border-main">
                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-lavender">
                   <span>03</span>
                   <span>Portal Account Password</span>

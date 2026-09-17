@@ -1,45 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 @import "tailwindcss";
 
+/* ==========================================================================
+   GLOBAL DESIGN TOKENS — SINGLE SOURCE OF TRUTH
+   Change any value here to update the color across the ENTIRE website!
+   ========================================================================== */
+:root {
+  /* --- Foundations & Backgrounds --- */
+  --bg-page: #EDE8DE;           /* Canvas background (warm darker off-white / parchment) */
+  --bg-section-alt: #E5DFD1;    /* Alternating section background (subtly deeper) */
+  --bg-card: #F9F7F2;           /* Cards, modals, drawers, input fields */
+  --bg-card-hover: #FFFFFF;     /* Card surface on hover */
+  --bg-subtle: #E8E2D5;         /* Pill tags, secondary badges, table footers */
+
+  /* --- Structural Borders --- */
+  --border-main: #D2C8B8;       /* Primary borders around cards, sections, headers */
+  --border-subtle: #DCD4C6;     /* Lighter internal dividers, table cell lines */
+  --border-focus: #4E2D92;      /* Input focus ring and selected tab highlight */
+
+  /* --- Primary Brand (Royal Purple / Lavender) --- */
+  --primary: #4E2D92;           /* Main buttons, brand highlights, active states */
+  --primary-hover: #3A1B73;     /* Button hover state */
+  --primary-light: #6540B2;     /* Subtle gradients and secondary accents */
+  --primary-soft: #E4DCF5;      /* Soft tint for badges and icon backgrounds */
+  --primary-border: #BAA9DD;    /* Border on primary badges */
+
+  /* --- Heritage Gold Accent --- */
+  --gold: #B8842A;              /* Jubilee accents, gold stars, special badges */
+  --gold-light: #D49C3D;
+  --gold-soft: #F5ECD9;
+  --gold-border: #DBC598;
+
+  /* --- High-Contrast Typography --- */
+  --text-main: #181224;         /* Headings (h1–h6), primary links, high-emphasis text */
+  --text-body: #2A2136;         /* Paragraph copy, table cell content */
+  --text-muted: #564D66;        /* Subtitles, labels, date tags, helper text */
+  --text-inverse: #FAF8F4;      /* White/light text on dark backgrounds and buttons */
+
+  /* --- Status Indicators --- */
+  --status-verified: #15803D;
+  --status-verified-bg: #DCFCE7;
+  --status-rejected: #DC2626;
+  --status-rejected-bg: #FEE2E2;
+}
+
 @theme {
   --font-display: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
-  /* Deep ink for high contrast reading */
-  --color-ink: #181224;
-  --color-ink-light: #281F38;
-  --color-ink-lighter: #3D3252;
+  /* Semantic Theme Mappings to :root */
+  --color-page: var(--bg-page);
+  --color-section-alt: var(--bg-section-alt);
+  --color-card: var(--bg-card);
+  --color-card-hover: var(--bg-card-hover);
+  --color-subtle: var(--bg-subtle);
 
-  /* Royal heritage purple / lavender */
-  --color-vermilion: #4E2D92;
-  --color-vermilion-light: #3D1F7B;
+  --color-border-main: var(--border-main);
+  --color-border-subtle: var(--border-subtle);
 
-  --color-lavender: #4E2D92;
-  --color-lavender-dark: #3A1B73;
-  --color-lavender-light: #6540B2;
-  --color-lavender-soft: #E4DCF5;
-  --color-lavender-subtle: #ECE5F8;
-  --color-lavender-border: #BAA9DD;
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-primary-soft: var(--primary-soft);
 
-  /* Warm heritage gold */
-  --color-gold: #B8842A;
-  --color-gold-light: #D49C3D;
-  --color-gold-soft: #F5ECD9;
-  --color-gold-border: #DBC598;
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-border: var(--gold-border);
 
-  /* Darker, rich off-white & parchment foundations */
-  --color-parchment: #EDE8DE;
-  --color-parchment-subtle: #E5DFD1;
-  --color-parchment-card: #F9F7F2;
-  --color-parchment-dark: #D2C8B8;
-  --color-parchment-border: #C8BDAA;
+  --color-text-main: var(--text-main);
+  --color-text-body: var(--text-body);
+  --color-text-muted: var(--text-muted);
 
-  /* High contrast body copy and metadata */
-  --color-stone: #2A2136;
-  --color-muted: #564D66;
+  /* Legacy & convenient utility aliases */
+  --color-parchment: var(--bg-page);
+  --color-parchment-subtle: var(--bg-section-alt);
+  --color-parchment-card: var(--bg-card);
+  --color-parchment-dark: var(--border-main);
 
-  /* Status */
-  --color-verified: #15803D;
+  --color-lavender: var(--primary);
+  --color-lavender-dark: var(--primary-hover);
+  --color-lavender-light: var(--primary-light);
+  --color-lavender-soft: var(--primary-soft);
+  --color-lavender-subtle: var(--bg-section-alt);
+  --color-lavender-border: var(--primary-border);
+
+  --color-ink: var(--text-main);
+  --color-stone: var(--text-body);
+  --color-muted: var(--text-muted);
+  --color-verified: var(--status-verified);
 }
 
 @layer base {
@@ -49,13 +98,13 @@
 
   html {
     scroll-behavior: smooth;
-    background: #EDE8DE;
+    background-color: var(--bg-page);
   }
 
   body {
     font-family: var(--font-sans);
-    background: #EDE8DE;
-    color: #2A2136;
+    background-color: var(--bg-page);
+    color: var(--text-body);
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -68,18 +117,18 @@
     min-height: 100svh;
     display: flex;
     flex-direction: column;
-    background: #EDE8DE;
+    background-color: var(--bg-page);
   }
 
   ::selection {
-    background: #4E2D92;
-    color: #FAF8F4;
+    background-color: var(--primary);
+    color: var(--text-inverse);
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: 600;
-    color: #181224;
+    color: var(--text-main);
     line-height: 1.2;
     letter-spacing: -0.01em;
   }
@@ -88,16 +137,16 @@
     color: inherit;
   }
 
-  /* Custom scrollbar matching darker parchment */
+  /* Custom scrollbar matching canvas tokens */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #E5DFD1;
+    background: var(--bg-section-alt);
   }
   ::-webkit-scrollbar-thumb {
-    background: #C4B9A7;
+    background: var(--border-main);
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
@@ -114,41 +163,49 @@
     font-family: var(--font-sans);
   }
 
-  /* Off-white Glassmorphism primitives */
-  .glass-card {
-    background: rgba(249, 247, 242, 0.94);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid #D2C8B8;
-    box-shadow: 0 10px 30px -8px rgba(24, 18, 36, 0.08);
+  /* Semantic UI classes reading directly from :root */
+  .bg-page {
+    background-color: var(--bg-page);
+  }
+  .bg-section-alt {
+    background-color: var(--bg-section-alt);
+  }
+  .bg-card {
+    background-color: var(--bg-card);
+  }
+  .border-main {
+    border-color: var(--border-main);
+  }
+  .border-subtle {
+    border-color: var(--border-subtle);
+  }
+  .text-main {
+    color: var(--text-main);
+  }
+  .text-body {
+    color: var(--text-body);
+  }
+  .text-muted {
+    color: var(--text-muted);
+  }
+  .text-primary {
+    color: var(--primary);
+  }
+  .bg-primary {
+    background-color: var(--primary);
   }
 
-  .glass-nav {
-    background: rgba(249, 247, 242, 0.94);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-bottom: 1px solid #D2C8B8;
-    box-shadow: 0 4px 20px -2px rgba(24, 18, 36, 0.06);
-  }
-
-  .glass-pill {
-    background: rgba(245, 236, 217, 0.85);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid #D2C8B8;
-  }
-
-  /* Micro-interactions & animations */
+  /* Card and Button micro-interactions */
   .card-lift {
-    transition: transform 0.26s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.26s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+    transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
   }
   .card-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 35px -10px rgba(78, 45, 146, 0.14), 0 2px 10px -2px rgba(24, 18, 36, 0.08);
+    box-shadow: 0 16px 32px -8px rgba(24, 18, 36, 0.12);
   }
 
   .btn-hover {
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .btn-hover:hover {
     transform: translateY(-1.5px);
@@ -165,24 +222,15 @@
     animation: heroIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
   }
 
-  .animate-pulseSlow {
-    animation: pulseSlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
   @keyframes heroIn {
     from {
       opacity: 0;
-      transform: translateY(22px);
+      transform: translateY(18px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
-  }
-
-  @keyframes pulseSlow {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.75; transform: scale(1.05); }
   }
 
   /* Traditional Meitei Mayek Cultural Divider */

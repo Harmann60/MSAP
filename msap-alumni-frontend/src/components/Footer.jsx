@@ -4,7 +4,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-b from-[#E5DFD1] to-[#DDD6C6] border-t border-[#D2C8B8] text-stone">
+    <footer className="bg-section-alt border-t border-main text-stone">
       <div className="max-w-6xl mx-auto px-5 py-16">
         <div className="grid grid-cols-2 md:grid-cols-12 gap-8 lg:gap-12 text-sm">
           {/* Brand & Address */}
@@ -22,7 +22,7 @@ export default function Footer() {
             <p className="text-stone/90 text-xs leading-relaxed max-w-sm mb-4">
               Connecting generations of Manipuri students who lived and learned in Pune since 1973. A registered non-profit alumni association.
             </p>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#F9F7F2] border border-[#D2C8B8] text-[11px] text-stone font-semibold">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-card border border-main text-[11px] text-stone font-semibold">
               <span>🏛</span> Society Reg. No. 915/M/SR/2025
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function Footer() {
               {['Facebook', 'LinkedIn', 'Instagram'].map((network) => (
                 <span
                   key={network}
-                  className="text-[11px] font-semibold text-stone/80 bg-[#F9F7F2] border border-[#D2C8B8] px-2.5 py-1 rounded-md"
+                  className="text-[11px] font-semibold text-stone/80 bg-card border border-main px-2.5 py-1 rounded-md"
                 >
                   {network}
                 </span>
@@ -81,7 +81,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-[#D2C8B8] bg-[#D8D1C1]/60">
+      <div className="border-t border-main bg-section-alt/80">
         <div className="max-w-6xl mx-auto px-5 py-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-[12px] text-stone/80 font-medium">
           <span>&copy; {year} Association of MSAP Alumni. All rights reserved.</span>
           <div className="flex items-center gap-5">

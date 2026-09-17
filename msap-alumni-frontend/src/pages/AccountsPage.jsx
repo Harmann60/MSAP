@@ -30,10 +30,10 @@ export default function AccountsPage() {
   }, []);
 
   return (
-    <div className="relative bg-[#EDE8DE] min-h-[90vh]">
+    <div className="relative bg-page min-h-[90vh]">
       {/* Header */}
       <div className="max-w-6xl mx-auto px-5 pt-16 pb-10 md:pt-20 md:pb-12 text-center md:text-left">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F9F7F2] text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-[#D2C8B8]">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-card text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-main">
           <span>📊</span> Financial Governance & Audit
         </div>
         <h1 className="font-display text-ink text-3xl sm:text-5xl font-bold tracking-tight mb-3">
@@ -46,7 +46,7 @@ export default function AccountsPage() {
 
       <div className="max-w-4xl mx-auto px-5 pb-16 md:pb-24 space-y-10">
         {/* Total Banner Card */}
-        <div className="text-center py-12 px-6 bg-[#F9F7F2] border border-[#D2C8B8] rounded-3xl shadow-sm">
+        <div className="text-center py-12 px-6 bg-card border border-main rounded-3xl shadow-sm">
           <div className="text-xs font-bold uppercase tracking-widest text-lavender mb-2">
             Total Assets Under Management
           </div>
@@ -59,8 +59,8 @@ export default function AccountsPage() {
         </div>
 
         {/* Ledger Table */}
-        <div className="bg-[#F9F7F2] border border-[#D2C8B8] rounded-3xl shadow-sm overflow-hidden">
-          <div className="px-6 md:px-8 py-5 border-b border-[#D2C8B8] flex items-center justify-between bg-[#E5DFD1]">
+        <div className="bg-card border border-main rounded-3xl shadow-sm overflow-hidden">
+          <div className="px-6 md:px-8 py-5 border-b border-main flex items-center justify-between bg-section-alt">
             <h3 className="font-display text-ink text-lg font-bold">Financial Registry & Ledger</h3>
             <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 border border-emerald-300 px-3 py-1 rounded-full">
               {loading ? 'Refreshing...' : '✓ All accounts verified'}
@@ -70,7 +70,7 @@ export default function AccountsPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="text-left text-muted text-[11px] font-bold uppercase tracking-wider border-b border-[#D2C8B8] bg-[#EDE8DE]/80">
+                <tr className="text-left text-muted text-[11px] font-bold uppercase tracking-wider border-b border-main bg-page/80">
                   <th className="px-6 md:px-8 py-3.5">Account / Fund</th>
                   <th className="px-6 md:px-8 py-3.5 text-right">Balance</th>
                   <th className="px-6 md:px-8 py-3.5">Status</th>
@@ -80,7 +80,7 @@ export default function AccountsPage() {
                 {accounts.map((row, i) => (
                   <tr
                     key={row.id || i}
-                    className="border-b border-[#D2C8B8]/60 last:border-0 hover:bg-[#EDE8DE]/50 transition-colors"
+                    className="border-b border-main/60 last:border-0 hover:bg-page/50 transition-colors"
                   >
                     <td className="px-6 md:px-8 py-4 font-semibold text-ink">{row.category}</td>
                     <td className="px-6 md:px-8 py-4 text-right font-mono font-bold text-stone">
@@ -95,7 +95,7 @@ export default function AccountsPage() {
                 ))}
               </tbody>
               <tfoot>
-                <tr className="bg-[#E5DFD1] border-t border-[#D2C8B8]">
+                <tr className="bg-section-alt border-t border-main">
                   <td className="px-6 md:px-8 py-4 font-bold text-ink text-base">Total Verified Assets</td>
                   <td className="px-6 md:px-8 py-4 text-right font-mono font-bold text-lavender text-lg">
                     {total}

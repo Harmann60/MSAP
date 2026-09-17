@@ -135,17 +135,13 @@ export default function AlumniLoginPage() {
   };
 
   return (
-    <div className="relative min-h-[85vh] bg-[#EDE8DE] flex flex-col items-center justify-center px-5 py-16 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-10 left-1/3 w-80 h-80 bg-lavender/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
-
+    <div className="relative min-h-[85vh] bg-page flex flex-col items-center justify-center px-5 py-16 overflow-hidden">
       {/* Header */}
       <div className="text-center mb-8 max-w-md animate-heroIn">
         <div className="w-16 h-16 mx-auto mb-3">
           <img src="/logo.png" alt="MSAP Alumni" className="w-full h-full object-contain drop-shadow-sm" />
         </div>
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F9F7F2] text-lavender text-xs font-bold uppercase tracking-wider mb-3 border border-[#D2C8B8]">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-card text-lavender text-xs font-bold uppercase tracking-wider mb-3 border border-main">
           <span>🏛</span> MSAP Alumni Gateway
         </div>
         <h1 className="font-display text-ink text-3xl sm:text-4xl font-bold tracking-tight">
@@ -160,9 +156,9 @@ export default function AlumniLoginPage() {
 
       {/* Login Card */}
       <div className="w-full max-w-md animate-heroInDelay">
-        <div className="border border-[#D2C8B8] bg-[#F9F7F2] rounded-3xl shadow-[0_20px_60px_-15px_rgba(24,18,36,0.12)] overflow-hidden">
+        <div className="border border-main bg-card rounded-3xl shadow-[0_20px_60px_-15px_rgba(24,18,36,0.12)] overflow-hidden">
           {/* Segmented Mode Switcher */}
-          <div className="p-3 bg-[#E5DFD1] border-b border-[#D2C8B8] grid grid-cols-2 gap-2">
+          <div className="p-3 bg-section-alt border-b border-main grid grid-cols-2 gap-2">
             <button
               type="button"
               onClick={() => {
@@ -172,7 +168,7 @@ export default function AlumniLoginPage() {
               }}
               className={`py-2.5 px-3 text-xs font-bold rounded-xl transition-all cursor-pointer ${
                 mode === 'login'
-                  ? 'bg-[#F9F7F2] text-ink shadow-sm'
+                  ? 'bg-card text-ink shadow-sm'
                   : 'text-stone/70 hover:text-ink'
               }`}
             >
@@ -187,7 +183,7 @@ export default function AlumniLoginPage() {
               }}
               className={`py-2.5 px-3 text-xs font-bold rounded-xl transition-all cursor-pointer ${
                 mode === 'setPassword'
-                  ? 'bg-[#F9F7F2] text-ink shadow-sm'
+                  ? 'bg-card text-ink shadow-sm'
                   : 'text-stone/70 hover:text-ink'
               }`}
             >
@@ -273,7 +269,7 @@ export default function AlumniLoginPage() {
                   type="button"
                   onClick={handleGoogleSignIn}
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-3 border border-[#D2C8B8] bg-white hover:bg-[#EDE8DE] text-ink font-bold py-3.5 px-4 rounded-xl shadow-2xs transition-all hover:border-lavender hover:-translate-y-0.5 cursor-pointer disabled:opacity-60 text-sm"
+                  className="w-full flex items-center justify-center gap-3 border border-main bg-white hover:bg-page text-ink font-bold py-3.5 px-4 rounded-xl shadow-2xs transition-all hover:border-lavender hover:-translate-y-0.5 cursor-pointer disabled:opacity-60 text-sm"
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24">
                     <path
@@ -298,11 +294,11 @@ export default function AlumniLoginPage() {
 
                 {/* Or divider */}
                 <div className="relative flex items-center justify-center my-3">
-                  <div className="border-t border-[#D2C8B8] w-full" />
-                  <span className="bg-[#F9F7F2] px-3 text-[11px] uppercase tracking-wider text-muted font-bold relative">
+                  <div className="border-t border-main w-full" />
+                  <span className="bg-card px-3 text-[11px] uppercase tracking-wider text-muted font-bold relative">
                     or with email
                   </span>
-                  <div className="border-t border-[#D2C8B8] w-full" />
+                  <div className="border-t border-main w-full" />
                 </div>
               </>
             )}
@@ -324,7 +320,7 @@ export default function AlumniLoginPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     placeholder="you@email.com"
-                    className="w-full border border-[#D2C8B8] bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
+                    className="w-full border border-main bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
                   />
                 </div>
               </div>
@@ -354,7 +350,7 @@ export default function AlumniLoginPage() {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     placeholder="Min. 6 characters"
-                    className="w-full border border-[#D2C8B8] bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
+                    className="w-full border border-main bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
                   />
                 </div>
               </div>
@@ -376,7 +372,7 @@ export default function AlumniLoginPage() {
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       required
                       placeholder="Re-enter password"
-                      className="w-full border border-[#D2C8B8] bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
+                      className="w-full border border-main bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
                     />
                   </div>
                 </div>
@@ -405,7 +401,7 @@ export default function AlumniLoginPage() {
             </form>
           </div>
 
-          <div className="px-6 sm:px-8 py-4 bg-[#E5DFD1] border-t border-[#D2C8B8] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-stone font-medium">
+          <div className="px-6 sm:px-8 py-4 bg-section-alt border-t border-main flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-stone font-medium">
             <span>Don't have an application submitted yet?</span>
             <Link to="/register" className="font-bold text-lavender hover:underline">
               Register for verification →

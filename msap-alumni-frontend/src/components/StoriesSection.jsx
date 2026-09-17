@@ -35,7 +35,7 @@ export default function StoriesSection() {
     <section className="max-w-6xl mx-auto px-5 py-16 md:py-24">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E5DFD1] text-lavender text-xs font-bold uppercase tracking-wider mb-3 border border-[#D2C8B8]">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-section-alt text-lavender text-xs font-bold uppercase tracking-wider mb-3 border border-main">
             <span>📖</span> Chronicles & Milestones
           </div>
           <h2 className="font-display text-ink text-3xl sm:text-4xl font-bold tracking-tight">
@@ -61,9 +61,9 @@ export default function StoriesSection() {
           <Link
             key={story.id}
             to="/stories"
-            className="group card-lift bg-[#F9F7F2] border border-[#D2C8B8] hover:border-lavender/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
+            className="group card-lift bg-card border border-main hover:border-lavender/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
           >
-            <div className="aspect-[16/10] overflow-hidden bg-[#E5DFD1] relative">
+            <div className="aspect-[16/10] overflow-hidden bg-section-alt relative">
               <img
                 src={story.image}
                 alt={story.title}
@@ -71,7 +71,7 @@ export default function StoriesSection() {
                 loading="lazy"
               />
               <div className="absolute top-3.5 left-3.5">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-lavender bg-[#F9F7F2]/95 backdrop-blur-md px-3 py-1 rounded-full border border-[#D2C8B8] shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-lavender bg-card/95 backdrop-blur-md px-3 py-1 rounded-full border border-main shadow-sm">
                   {story.category}
                 </span>
               </div>
@@ -93,7 +93,7 @@ export default function StoriesSection() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-[#D2C8B8] text-xs font-bold text-lavender flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-main text-xs font-bold text-lavender flex items-center justify-between">
                 <span>Read Full Chronicle</span>
                 <span className="group-hover:translate-x-1.5 transition-transform text-base">→</span>
               </div>

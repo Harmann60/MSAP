@@ -112,13 +112,10 @@ export default function EventsPage() {
       : events.filter((e) => e.category?.toLowerCase() === activeCategory.toLowerCase());
 
   return (
-    <div className="relative bg-[#EDE8DE] min-h-[90vh]">
-      {/* Ambient background glows */}
-      <div className="absolute top-10 right-1/4 w-96 h-96 bg-lavender/10 rounded-full blur-3xl pointer-events-none" />
-
+    <div className="relative bg-page min-h-[90vh]">
       {/* Header */}
       <div className="relative max-w-6xl mx-auto px-5 pt-16 pb-10 md:pt-20 md:pb-12 text-center md:text-left">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F9F7F2] text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-[#D2C8B8]">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-card text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-main">
           <span>🗓</span> Gatherings & Reunions
         </div>
         <h1 className="font-display text-ink text-3xl sm:text-5xl font-bold tracking-tight mb-3">
@@ -137,7 +134,7 @@ export default function EventsPage() {
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 activeCategory === cat
                   ? 'bg-lavender text-white shadow-md shadow-lavender/20'
-                  : 'bg-[#F9F7F2] border border-[#D2C8B8] text-stone hover:border-lavender hover:text-lavender'
+                  : 'bg-card border border-main text-stone hover:border-lavender hover:text-lavender'
               }`}
             >
               {cat}
@@ -153,12 +150,12 @@ export default function EventsPage() {
             return (
               <div
                 key={event.id}
-                className="group card-lift bg-[#F9F7F2] border border-[#D2C8B8] hover:border-lavender/50 p-7 sm:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="group card-lift bg-card border border-main hover:border-lavender/50 p-7 sm:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   {/* Card Header with Calendar Block */}
                   <div className="flex items-start justify-between gap-4 mb-5">
-                    <div className="flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-[#EDE8DE] border border-[#D2C8B8] text-center shrink-0 group-hover:bg-lavender group-hover:text-white transition-colors duration-300">
+                    <div className="flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-page border border-main text-center shrink-0 group-hover:bg-lavender group-hover:text-white transition-colors duration-300">
                       <span className="text-[11px] font-bold tracking-wider uppercase block leading-none text-lavender group-hover:text-white/90">
                         {event.month}
                       </span>
@@ -170,7 +167,7 @@ export default function EventsPage() {
                     <div className="flex items-center gap-2">
                       <span
                         className={`text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border shadow-2xs ${
-                          event.badgeColor || 'bg-[#E4DCF5] text-lavender border-lavender/25'
+                          event.badgeColor || 'bg-lavender-soft text-lavender border-lavender/25'
                         }`}
                       >
                         {event.category}
@@ -196,7 +193,7 @@ export default function EventsPage() {
                 </div>
 
                 {/* Footer RSVP Action */}
-                <div className="pt-5 border-t border-[#D2C8B8] flex items-center justify-between gap-4">
+                <div className="pt-5 border-t border-main flex items-center justify-between gap-4">
                   <span className="text-xs text-muted font-semibold">
                     {isRsvpd ? '✓ RSVP Confirmed' : 'RSVP Open to Alumni'}
                   </span>

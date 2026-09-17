@@ -107,13 +107,10 @@ export default function StoriesPage() {
   const rest = filteredStories.slice(1);
 
   return (
-    <div className="relative bg-[#EDE8DE] min-h-[90vh]">
-      {/* Ambient background glows */}
-      <div className="absolute top-10 left-1/4 w-96 h-96 bg-lavender/10 rounded-full blur-3xl pointer-events-none" />
-
+    <div className="relative bg-page min-h-[90vh]">
       {/* Header */}
       <div className="relative max-w-6xl mx-auto px-5 pt-16 pb-10 md:pt-20 md:pb-12 text-center md:text-left">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F9F7F2] text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-[#D2C8B8]">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-card text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-main">
           <span>📖</span> Alumni Chronicles & Spotlights
         </div>
         <h1 className="font-display text-ink text-3xl sm:text-5xl font-bold tracking-tight mb-3">
@@ -132,7 +129,7 @@ export default function StoriesPage() {
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 activeFilter === f
                   ? 'bg-lavender text-white shadow-md shadow-lavender/20'
-                  : 'bg-[#F9F7F2] border border-[#D2C8B8] text-stone hover:border-lavender hover:text-lavender'
+                  : 'bg-card border border-main text-stone hover:border-lavender hover:text-lavender'
               }`}
             >
               {f}
@@ -147,17 +144,17 @@ export default function StoriesPage() {
           <div className="mb-14">
             <Link
               to="/stories"
-              className="group card-lift block bg-[#F9F7F2] border border-[#D2C8B8] hover:border-lavender/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+              className="group card-lift block bg-card border border-main hover:border-lavender/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
             >
               <div className="grid lg:grid-cols-12">
-                <div className="lg:col-span-7 aspect-[16/10] lg:aspect-auto overflow-hidden bg-[#E5DFD1] relative min-h-[300px]">
+                <div className="lg:col-span-7 aspect-[16/10] lg:aspect-auto overflow-hidden bg-section-alt relative min-h-[300px]">
                   <img
                     src={featured.image}
                     alt={featured.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="text-xs font-bold uppercase tracking-wider bg-[#F9F7F2]/95 backdrop-blur-md text-lavender px-3.5 py-1 rounded-full border border-[#D2C8B8] shadow-sm">
+                    <span className="text-xs font-bold uppercase tracking-wider bg-card/95 backdrop-blur-md text-lavender px-3.5 py-1 rounded-full border border-main shadow-sm">
                       Featured Story
                     </span>
                   </div>
@@ -180,7 +177,7 @@ export default function StoriesPage() {
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-[#D2C8B8] flex items-center justify-between text-xs font-bold text-lavender">
+                  <div className="pt-4 border-t border-main flex items-center justify-between text-xs font-bold text-lavender">
                     <span>Read Full Chronicle</span>
                     <span className="group-hover:translate-x-1.5 transition-transform text-base">→</span>
                   </div>
@@ -196,16 +193,16 @@ export default function StoriesPage() {
             <Link
               key={story.id}
               to="/stories"
-              className="group card-lift bg-[#F9F7F2] border border-[#D2C8B8] hover:border-lavender/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
+              className="group card-lift bg-card border border-main hover:border-lavender/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
             >
-              <div className="aspect-[16/10] overflow-hidden bg-[#E5DFD1] relative">
+              <div className="aspect-[16/10] overflow-hidden bg-section-alt relative">
                 <img
                   src={story.image}
                   alt={story.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-3.5 left-3.5">
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-[#F9F7F2]/95 backdrop-blur-md text-lavender px-3 py-1 rounded-full border border-[#D2C8B8] shadow-2xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-card/95 backdrop-blur-md text-lavender px-3 py-1 rounded-full border border-main shadow-2xs">
                     {story.category || 'Article'}
                   </span>
                 </div>
@@ -224,7 +221,7 @@ export default function StoriesPage() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#D2C8B8] text-xs font-bold text-lavender flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-main text-xs font-bold text-lavender flex items-center justify-between">
                   <span>Read Story</span>
                   <span className="group-hover:translate-x-1.5 transition-transform text-base">→</span>
                 </div>

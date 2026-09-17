@@ -147,7 +147,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-[#F9F7F2]/95 backdrop-blur-md text-ink sticky top-0 z-50 border-b border-[#D2C8B8] shadow-sm">
+      <nav className="bg-card/95 backdrop-blur-md text-ink sticky top-0 z-50 border-b border-main shadow-sm">
         <div className="max-w-6xl mx-auto px-5">
           <div className="flex justify-between items-center h-18">
             {/* Brand Logo */}
@@ -179,8 +179,8 @@ export default function Navbar() {
                   <button
                     className={`text-[14px] font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer ${
                       activeMega === idx
-                        ? 'text-lavender bg-[#E5DFD1] font-bold'
-                        : 'text-stone hover:text-lavender hover:bg-[#EDE8DE]'
+                        ? 'text-lavender bg-section-alt font-bold'
+                        : 'text-stone hover:text-lavender hover:bg-page'
                     }`}
                   >
                     {item.label}
@@ -199,10 +199,10 @@ export default function Navbar() {
 
                   {/* Mega Menu Dropdown */}
                   {activeMega === idx && (
-                    <div className="absolute top-[90%] left-1/2 -translate-x-1/2 w-[520px] bg-[#F9F7F2] border border-[#D2C8B8] shadow-[0_20px_50px_rgba(24,18,36,0.14)] rounded-3xl overflow-hidden z-50 animate-heroIn">
+                    <div className="absolute top-[90%] left-1/2 -translate-x-1/2 w-[520px] bg-card border border-main shadow-[0_20px_50px_rgba(24,18,36,0.14)] rounded-3xl overflow-hidden z-50 animate-heroIn">
                       <div className="grid grid-cols-2 gap-0 p-6">
                         {item.children.map((group, gi) => (
-                          <div key={gi} className={gi > 0 ? 'pl-6 border-l border-[#D2C8B8]' : ''}>
+                          <div key={gi} className={gi > 0 ? 'pl-6 border-l border-main' : ''}>
                             <div className="text-[11px] font-bold uppercase tracking-wider text-lavender mb-3 flex items-center gap-1.5">
                               <span>✦</span>
                               {group.heading}
@@ -212,7 +212,7 @@ export default function Navbar() {
                                 <li key={li}>
                                   <Link
                                     to={link.to}
-                                    className="group/item flex items-center gap-2.5 text-[13.5px] font-medium text-stone hover:text-lavender p-2 rounded-xl hover:bg-[#E5DFD1]/70 transition-all"
+                                    className="group/item flex items-center gap-2.5 text-[13.5px] font-medium text-stone hover:text-lavender p-2 rounded-xl hover:bg-section-alt/70 transition-all"
                                   >
                                     <span className="text-base">{link.icon}</span>
                                     <span className="group-hover/item:translate-x-0.5 transition-transform">
@@ -227,7 +227,7 @@ export default function Navbar() {
                       </div>
 
                       {/* Dropdown bottom footer bar */}
-                      <div className="bg-[#E5DFD1] px-6 py-2.5 border-t border-[#D2C8B8] flex items-center justify-between text-[12px] text-muted font-medium">
+                      <div className="bg-section-alt px-6 py-2.5 border-t border-main flex items-center justify-between text-[12px] text-muted font-medium">
                         <span>Manipuri Students' Association Pune</span>
                         <Link to="/about" className="text-lavender font-bold hover:underline">
                           Learn about trust →
@@ -245,7 +245,7 @@ export default function Navbar() {
                 <div className="flex items-center gap-3">
                   <Link
                     to="/community"
-                    className="group flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#EDE8DE] border border-[#D2C8B8] text-ink text-[13px] font-bold shadow-2xs hover:border-lavender transition-all"
+                    className="group flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-page border border-main text-ink text-[13px] font-bold shadow-2xs hover:border-lavender transition-all"
                   >
                     <span className="flex h-2 w-2 relative">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
@@ -284,7 +284,7 @@ export default function Navbar() {
 
             {/* Mobile hamburger button */}
             <button
-              className="lg:hidden text-ink hover:text-lavender p-2 rounded-xl bg-[#EDE8DE] border border-[#D2C8B8]"
+              className="lg:hidden text-ink hover:text-lavender p-2 rounded-xl bg-page border border-main"
               onClick={() => setMobileOpen((v) => !v)}
               aria-label="Toggle navigation"
             >
@@ -303,10 +303,10 @@ export default function Navbar() {
 
         {/* Mobile menu drawer */}
         {mobileOpen && (
-          <div className="lg:hidden bg-[#F9F7F2] border-t border-[#D2C8B8] max-h-[80vh] overflow-y-auto shadow-2xl animate-heroIn">
+          <div className="lg:hidden bg-card border-t border-main max-h-[80vh] overflow-y-auto shadow-2xl animate-heroIn">
             <div className="px-5 py-5 space-y-2">
               {NAV_ITEMS.map((item, idx) => (
-                <div key={idx} className="border-b border-[#D2C8B8]/60 pb-2">
+                <div key={idx} className="border-b border-main/60 pb-2">
                   <button
                     onClick={() => setMobileExpanded(mobileExpanded === idx ? null : idx)}
                     className="w-full flex items-center justify-between text-left text-[15px] font-bold text-ink py-2 hover:text-lavender transition-colors"
@@ -354,13 +354,13 @@ export default function Navbar() {
               <div className="pt-4 space-y-2.5">
                 {currentUser ? (
                   <div className="space-y-2">
-                    <div className="p-3 bg-[#E5DFD1] rounded-xl border border-[#D2C8B8] flex items-center gap-2 text-xs font-bold text-ink">
+                    <div className="p-3 bg-section-alt rounded-xl border border-main flex items-center gap-2 text-xs font-bold text-ink">
                       <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block" />
                       Signed in as {currentUser.fullName}
                     </div>
                     <button
                       onClick={handleSignOut}
-                      className="w-full text-center text-sm font-bold text-stone border border-[#D2C8B8] py-2.5 rounded-xl hover:text-vermilion"
+                      className="w-full text-center text-sm font-bold text-stone border border-main py-2.5 rounded-xl hover:text-vermilion"
                     >
                       Sign Out
                     </button>
@@ -369,7 +369,7 @@ export default function Navbar() {
                   <>
                     <Link
                       to="/login"
-                      className="block w-full text-center text-sm font-bold text-stone border-2 border-[#D2C8B8] py-3 rounded-xl hover:border-lavender hover:text-lavender transition-colors"
+                      className="block w-full text-center text-sm font-bold text-stone border-2 border-main py-3 rounded-xl hover:border-lavender hover:text-lavender transition-colors"
                     >
                       Sign In
                     </Link>
