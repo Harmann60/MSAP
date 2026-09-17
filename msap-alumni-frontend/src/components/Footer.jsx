@@ -9,10 +9,12 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-12 gap-8 lg:gap-12 text-sm">
           {/* Brand & Address */}
           <div className="col-span-2 md:col-span-4">
-            <Link to="/" className="flex items-center gap-2.5 mb-3 group">
-              <div className="w-8 h-8 rounded-lg bg-lavender flex items-center justify-center text-white font-bold text-sm shadow-sm">
-                M
-              </div>
+            <Link to="/" className="flex items-center gap-3 mb-3 group">
+              <img
+                src="/logo.png"
+                alt="MSAP Alumni Official Logo"
+                className="w-10 h-10 object-contain drop-shadow-sm group-hover:scale-105 transition-transform"
+              />
               <span className="font-display text-ink font-bold text-xl group-hover:text-lavender transition-colors">
                 MSAP Alumni
               </span>

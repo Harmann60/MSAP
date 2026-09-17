@@ -47,6 +47,9 @@ export default function AdminLoginPage() {
 
       {/* Brand */}
       <div className="text-center mb-10 animate-heroIn">
+        <div className="w-16 h-16 mx-auto mb-4">
+          <img src="/logo.png" alt="MSAP Alumni" className="w-full h-full object-contain drop-shadow-md" />
+        </div>
         <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-2">
           Manipur Students' Association Pune
         </p>

@@ -152,17 +152,11 @@ export default function Navbar() {
           <div className="flex justify-between items-center h-18">
             {/* Brand Logo */}
             <Link to="/" className="flex items-center gap-3 shrink-0 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-lavender-dark to-lavender flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
-                <img
-                  src="/logo.png"
-                  alt="MSAP Alumni"
-                  className="w-7 h-7 object-contain rounded-lg"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.currentTarget.parentElement.innerText = 'M';
-                  }}
-                />
-              </div>
+              <img
+                src="/logo.png"
+                alt="MSAP Alumni Official Logo"
+                className="w-11 h-11 object-contain drop-shadow-sm group-hover:scale-105 transition-transform"
+              />
               <div>
                 <span className="font-display text-ink group-hover:text-lavender transition-colors text-lg font-bold leading-none block">
                   MSAP Alumni

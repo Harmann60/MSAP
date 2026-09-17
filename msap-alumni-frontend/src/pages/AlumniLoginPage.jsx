@@ -142,6 +142,9 @@ export default function AlumniLoginPage() {
 
       {/* Header */}
       <div className="text-center mb-8 max-w-md animate-heroIn">
+        <div className="w-16 h-16 mx-auto mb-3">
+          <img src="/logo.png" alt="MSAP Alumni" className="w-full h-full object-contain drop-shadow-sm" />
+        </div>
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F9F7F2] text-lavender text-xs font-bold uppercase tracking-wider mb-3 border border-[#D2C8B8]">
           <span>🏛</span> MSAP Alumni Gateway
         </div>

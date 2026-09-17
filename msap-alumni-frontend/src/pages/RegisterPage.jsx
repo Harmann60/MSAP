@@ -159,6 +159,9 @@ export default function RegisterPage() {
 
       {/* Header */}
       <div className="relative max-w-4xl mx-auto px-5 text-center mb-10">
+        <div className="w-16 h-16 mx-auto mb-3">
+          <img src="/logo.png" alt="MSAP Alumni" className="w-full h-full object-contain drop-shadow-sm" />
+        </div>
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F9F7F2] text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-[#D2C8B8]">
           <span>🎓</span> Official Alumni Verification
         </div>
