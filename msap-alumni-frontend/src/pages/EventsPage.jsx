@@ -11,7 +11,7 @@ const DEFAULT_EVENTS = [
     title: '51st Annual MSAP Alumni Meet 2026',
     location: 'Symbiosis Campus &middot; Viman Nagar, Pune',
     category: 'Flagship',
-    badgeColor: 'bg-lavender-soft text-lavender border-lavender/25',
+    badgeColor: 'bg-[#E4DCF5] text-lavender border-lavender/30',
     description:
       'The premier annual reunion for all Manipuri graduates who studied in Pune. Keynote panel, networking lunch, cultural performances, and the annual general body session.',
   },
@@ -24,7 +24,7 @@ const DEFAULT_EVENTS = [
     title: 'Global Career & Tech Networking Night',
     location: 'Virtual via Google Meet',
     category: 'Career',
-    badgeColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    badgeColor: 'bg-emerald-100/70 text-emerald-800 border-emerald-300',
     description:
       'Alumni leaders in engineering, finance, biotech, and entrepreneurship share strategies and offer career advice to recent graduates.',
   },
@@ -37,7 +37,7 @@ const DEFAULT_EVENTS = [
     title: 'Yaoshang Cultural Evening & Thabal',
     location: 'Classic Grande &middot; Imphal, Manipur',
     category: 'Cultural',
-    badgeColor: 'bg-amber-50 text-amber-800 border-amber-200',
+    badgeColor: 'bg-amber-100/70 text-amber-900 border-amber-300',
     description:
       'A joyful evening of traditional Meitei folk music, dance, Thabal Chongba, and culinary celebrations honoring our cultural roots.',
   },
@@ -50,7 +50,7 @@ const DEFAULT_EVENTS = [
     title: 'New Graduates Pune Welcome & Orientation',
     location: 'FC Road &middot; Pune, Maharashtra',
     category: 'Onboarding',
-    badgeColor: 'bg-purple-50 text-purple-700 border-purple-200',
+    badgeColor: 'bg-purple-100/70 text-purple-800 border-purple-300',
     description:
       'Welcome evening for new graduates transitioning into life and work across Maharashtra and the broader diaspora.',
   },
@@ -63,7 +63,7 @@ const DEFAULT_EVENTS = [
     title: 'MSAP Winter Social & Fireside Chat',
     location: 'Bengaluru Chapter &middot; Indiranagar',
     category: 'Chapter',
-    badgeColor: 'bg-blue-50 text-blue-700 border-blue-200',
+    badgeColor: 'bg-blue-100/70 text-blue-800 border-blue-300',
     description:
       'Informal mixer for Pune alumni working and living in the Bengaluru technology and academic hub.',
   },
@@ -87,7 +87,7 @@ export default function EventsPage() {
             title: item.title,
             location: item.location,
             category: item.category || 'General',
-            badgeColor: 'bg-lavender-soft text-lavender border-lavender/25',
+            badgeColor: 'bg-[#E4DCF5] text-lavender border-lavender/30',
             description: item.description,
           }));
           setEvents(mapped);
@@ -112,13 +112,13 @@ export default function EventsPage() {
       : events.filter((e) => e.category?.toLowerCase() === activeCategory.toLowerCase());
 
   return (
-    <div className="relative bg-gradient-to-b from-[#F2EDFA] via-[#FAF9FC] to-[#FAF9FC] min-h-[90vh]">
+    <div className="relative bg-[#EDE8DE] min-h-[90vh]">
       {/* Ambient background glows */}
       <div className="absolute top-10 right-1/4 w-96 h-96 bg-lavender/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header */}
       <div className="relative max-w-6xl mx-auto px-5 pt-16 pb-10 md:pt-20 md:pb-12 text-center md:text-left">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-lavender-soft text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-lavender/25">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F9F7F2] text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-[#D2C8B8]">
           <span>🗓</span> Gatherings & Reunions
         </div>
         <h1 className="font-display text-ink text-3xl sm:text-5xl font-bold tracking-tight mb-3">
@@ -137,7 +137,7 @@ export default function EventsPage() {
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 activeCategory === cat
                   ? 'bg-lavender text-white shadow-md shadow-lavender/20'
-                  : 'bg-white border border-parchment-dark text-stone hover:border-lavender hover:text-lavender'
+                  : 'bg-[#F9F7F2] border border-[#D2C8B8] text-stone hover:border-lavender hover:text-lavender'
               }`}
             >
               {cat}
@@ -153,12 +153,12 @@ export default function EventsPage() {
             return (
               <div
                 key={event.id}
-                className="group card-lift bg-white border border-parchment-dark hover:border-lavender/40 p-7 sm:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="group card-lift bg-[#F9F7F2] border border-[#D2C8B8] hover:border-lavender/50 p-7 sm:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   {/* Card Header with Calendar Block */}
                   <div className="flex items-start justify-between gap-4 mb-5">
-                    <div className="flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-lavender-subtle border border-lavender/20 text-center shrink-0 group-hover:bg-lavender group-hover:text-white transition-colors duration-300">
+                    <div className="flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-[#EDE8DE] border border-[#D2C8B8] text-center shrink-0 group-hover:bg-lavender group-hover:text-white transition-colors duration-300">
                       <span className="text-[11px] font-bold tracking-wider uppercase block leading-none text-lavender group-hover:text-white/90">
                         {event.month}
                       </span>
@@ -170,7 +170,7 @@ export default function EventsPage() {
                     <div className="flex items-center gap-2">
                       <span
                         className={`text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border shadow-2xs ${
-                          event.badgeColor || 'bg-lavender-soft text-lavender border-lavender/20'
+                          event.badgeColor || 'bg-[#E4DCF5] text-lavender border-lavender/25'
                         }`}
                       >
                         {event.category}
@@ -196,7 +196,7 @@ export default function EventsPage() {
                 </div>
 
                 {/* Footer RSVP Action */}
-                <div className="pt-5 border-t border-parchment-dark/80 flex items-center justify-between gap-4">
+                <div className="pt-5 border-t border-[#D2C8B8] flex items-center justify-between gap-4">
                   <span className="text-xs text-muted font-semibold">
                     {isRsvpd ? '✓ RSVP Confirmed' : 'RSVP Open to Alumni'}
                   </span>
@@ -205,7 +205,7 @@ export default function EventsPage() {
                     onClick={() => handleRsvp(event.id)}
                     className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                       isRsvpd
-                        ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                        ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
                         : 'bg-lavender hover:bg-lavender-dark text-white shadow-sm'
                     }`}
                   >

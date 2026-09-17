@@ -24,7 +24,7 @@ function FormField({ label, name, type = 'text', placeholder, required, value, o
           onChange={onChange}
           placeholder={placeholder}
           required={required}
-          className={`w-full border border-parchment-dark/90 bg-white ${
+          className={`w-full border border-[#D2C8B8] bg-white ${
             icon ? 'pl-10' : 'pl-4'
           } pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50 shadow-2xs`}
         />
@@ -87,15 +87,15 @@ export default function RegisterPage() {
 
   if (submitted) {
     return (
-      <div className="relative bg-gradient-to-b from-[#F2EDFA] via-[#FAF9FC] to-[#FAF9FC] min-h-[85vh] flex items-center justify-center px-5 py-16">
+      <div className="relative bg-[#EDE8DE] min-h-[85vh] flex items-center justify-center px-5 py-16">
         <div className="absolute top-10 left-1/3 w-80 h-80 bg-lavender/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="relative max-w-lg w-full text-center p-8 sm:p-10 bg-white/95 backdrop-blur-xl border border-lavender/30 rounded-3xl shadow-[0_20px_60px_-15px_rgba(88,59,156,0.15)] animate-heroIn">
-          <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center text-3xl font-bold mx-auto mb-5 shadow-sm">
+        <div className="relative max-w-lg w-full text-center p-8 sm:p-10 bg-[#F9F7F2] border border-[#D2C8B8] rounded-3xl shadow-[0_20px_60px_-15px_rgba(24,18,36,0.12)] animate-heroIn">
+          <div className="w-16 h-16 rounded-2xl bg-emerald-100/70 text-emerald-700 border border-emerald-300 flex items-center justify-center text-3xl font-bold mx-auto mb-5 shadow-sm">
             ✓
           </div>
 
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100/60 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3 border border-emerald-200">
             Submission Confirmed
           </div>
 
@@ -107,7 +107,7 @@ export default function RegisterPage() {
             Thank you, <strong className="text-ink">{formData.fullName}</strong>. Your account credentials have been securely stored. Our administrator will verify your Pune college alumni credentials within <span className="font-semibold text-lavender">2–3 business days</span>.
           </p>
 
-          <div className="p-4 rounded-2xl bg-parchment-subtle/80 border border-parchment-dark text-left text-xs space-y-2 mb-8">
+          <div className="p-4 rounded-2xl bg-[#EDE8DE] border border-[#D2C8B8] text-left text-xs space-y-2 mb-8">
             <div className="flex items-center gap-2 text-stone font-semibold">
               <span>📧 Confirmation Sent:</span>
               <span className="text-ink">{formData.email}</span>
@@ -152,14 +152,14 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="relative bg-gradient-to-b from-[#F2EDFA] via-[#FAF9FC] to-[#FAF9FC] min-h-[90vh] py-14 sm:py-20 overflow-hidden">
+    <div className="relative bg-[#EDE8DE] min-h-[90vh] py-14 sm:py-20 overflow-hidden">
       {/* Ambient background glows */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-lavender/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header */}
       <div className="relative max-w-4xl mx-auto px-5 text-center mb-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-lavender-soft text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-lavender/25">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F9F7F2] text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-[#D2C8B8]">
           <span>🎓</span> Official Alumni Verification
         </div>
         <h1 className="font-display text-ink text-3xl sm:text-5xl font-bold tracking-tight mb-3">
@@ -171,9 +171,9 @@ export default function RegisterPage() {
       </div>
 
       <div className="relative max-w-3xl mx-auto px-5">
-        <div className="bg-white border border-parchment-dark/90 rounded-3xl shadow-[0_20px_60px_-15px_rgba(28,20,46,0.09)] overflow-hidden">
+        <div className="bg-[#F9F7F2] border border-[#D2C8B8] rounded-3xl shadow-[0_20px_60px_-15px_rgba(24,18,36,0.1)] overflow-hidden">
           {/* Card Top Banner */}
-          <div className="p-6 sm:p-8 bg-gradient-to-r from-lavender-subtle/70 via-white to-gold-soft/50 border-b border-parchment-dark/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="p-6 sm:p-8 bg-[#E5DFD1] border-b border-[#D2C8B8] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <h2 className="font-display text-ink text-2xl font-bold">
                 Alumni Registration Form
@@ -182,13 +182,13 @@ export default function RegisterPage() {
                 Submissions are reviewed by the MSAP executive committee for verified credentials.
               </p>
             </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-lavender/30 text-[11px] font-bold text-lavender shadow-2xs self-start sm:self-auto">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F9F7F2] border border-[#D2C8B8] text-[11px] font-bold text-lavender shadow-2xs self-start sm:self-auto">
               <span>🔒</span> 256-Bit Encrypted
             </div>
           </div>
 
           {errorMessage && (
-            <div className="mx-6 sm:mx-8 mt-6 p-4 rounded-2xl border border-red-200 bg-red-50/80 text-red-700 text-xs font-semibold flex items-center gap-2.5">
+            <div className="mx-6 sm:mx-8 mt-6 p-4 rounded-2xl border border-red-300 bg-red-100/70 text-red-800 text-xs font-semibold flex items-center gap-2.5">
               <span className="text-base">⚠️</span>
               <span>{errorMessage}</span>
             </div>
@@ -209,7 +209,7 @@ export default function RegisterPage() {
 
             {/* Section 1: Personal Details */}
             <div>
-              <div className="flex items-center gap-2 pb-2 mb-4 border-b border-parchment-dark text-xs font-bold uppercase tracking-wider text-lavender">
+              <div className="flex items-center gap-2 pb-2 mb-4 border-b border-[#D2C8B8] text-xs font-bold uppercase tracking-wider text-lavender">
                 <span>01</span>
                 <span>Personal Information</span>
               </div>
@@ -249,7 +249,7 @@ export default function RegisterPage() {
 
             {/* Section 2: Pune Academic History */}
             <div>
-              <div className="flex items-center gap-2 pb-2 mb-4 border-b border-parchment-dark text-xs font-bold uppercase tracking-wider text-lavender">
+              <div className="flex items-center gap-2 pb-2 mb-4 border-b border-[#D2C8B8] text-xs font-bold uppercase tracking-wider text-lavender">
                 <span>02</span>
                 <span>Pune Academic Experience</span>
               </div>
@@ -294,7 +294,7 @@ export default function RegisterPage() {
 
             {/* Section 3: Account Password */}
             <div>
-              <div className="flex items-center justify-between pb-2 mb-4 border-b border-parchment-dark">
+              <div className="flex items-center justify-between pb-2 mb-4 border-b border-[#D2C8B8]">
                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-lavender">
                   <span>03</span>
                   <span>Portal Account Password</span>
@@ -341,7 +341,7 @@ export default function RegisterPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn-hover bg-lavender hover:bg-lavender-dark text-white font-bold py-4 rounded-xl shadow-[0_10px_30px_rgba(88,59,156,0.3)] transition-all text-base disabled:opacity-60 cursor-pointer flex items-center justify-center gap-2"
+                className="w-full btn-hover bg-lavender hover:bg-lavender-dark text-white font-bold py-4 rounded-xl shadow-[0_10px_30px_rgba(78,45,146,0.3)] transition-all text-base disabled:opacity-60 cursor-pointer flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>

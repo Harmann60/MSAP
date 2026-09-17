@@ -81,13 +81,13 @@ export default function CommunityPage() {
   }, []);
 
   return (
-    <div className="relative bg-gradient-to-b from-[#F2EDFA] via-[#FAF9FC] to-[#FAF9FC] min-h-[90vh]">
+    <div className="relative bg-[#EDE8DE] min-h-[90vh]">
       {/* Ambient background glows */}
       <div className="absolute top-10 left-1/3 w-96 h-96 bg-lavender/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header */}
       <div className="relative max-w-6xl mx-auto px-5 pt-16 pb-10 md:pt-20 md:pb-12 text-center md:text-left">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-lavender-soft text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-lavender/25">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F9F7F2] text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-[#D2C8B8]">
           <span>🤝</span> Chapters & Professional Networks
         </div>
         <h1 className="font-display text-ink text-3xl sm:text-5xl font-bold tracking-tight mb-3">
@@ -100,7 +100,7 @@ export default function CommunityPage() {
 
       <div className="relative max-w-6xl mx-auto px-5 pb-20 md:pb-28">
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white/90 backdrop-blur-md border border-parchment-dark/80 rounded-3xl p-8 shadow-sm mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-[#F9F7F2] border border-[#D2C8B8] rounded-3xl p-8 shadow-sm mb-14">
           {[
             { value: `${groups.length}+`, label: 'Active Chapters', icon: '🏛' },
             { value: '2,000+', label: 'Connected Alumni', icon: '👥' },
@@ -108,7 +108,7 @@ export default function CommunityPage() {
             { value: '50+', label: 'Years of Solidarity', icon: '🏅' },
           ].map((stat, i) => (
             <div key={i} className="flex items-center gap-4">
-              <span className="w-12 h-12 rounded-2xl bg-lavender-subtle text-2xl flex items-center justify-center shrink-0">
+              <span className="w-12 h-12 rounded-2xl bg-[#EDE8DE] text-2xl flex items-center justify-center shrink-0">
                 {stat.icon}
               </span>
               <div>
@@ -130,14 +130,14 @@ export default function CommunityPage() {
           {groups.map((group, idx) => (
             <div
               key={group.id || idx}
-              className="group card-lift p-7 bg-white border border-parchment-dark hover:border-lavender/40 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="group card-lift p-7 bg-[#F9F7F2] border border-[#D2C8B8] hover:border-lavender/50 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="w-10 h-10 rounded-xl bg-lavender-subtle text-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <span className="w-10 h-10 rounded-xl bg-[#EDE8DE] text-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                     {group.icon || '🏛'}
                   </span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-lavender bg-lavender-soft px-3 py-1 rounded-full border border-lavender/25">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-lavender bg-[#E4DCF5] px-3 py-1 rounded-full border border-lavender/25">
                     {group.group_type || 'Chapter'}
                   </span>
                 </div>
@@ -157,7 +157,7 @@ export default function CommunityPage() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-parchment-dark/70 flex items-center justify-between text-xs font-bold text-lavender">
+              <div className="mt-6 pt-4 border-t border-[#D2C8B8] flex items-center justify-between text-xs font-bold text-lavender">
                 <span>View Chapter Directory</span>
                 <span className="group-hover:translate-x-1.5 transition-transform text-base">→</span>
               </div>
@@ -166,7 +166,7 @@ export default function CommunityPage() {
         </div>
 
         {/* Start a chapter CTA card */}
-        <div className="relative bg-gradient-to-br from-white via-[#FAF9FC] to-[#F3EDFB] border border-lavender/25 p-8 sm:p-12 rounded-3xl text-center shadow-lg shadow-lavender/5 max-w-3xl mx-auto overflow-hidden">
+        <div className="relative bg-gradient-to-br from-[#F9F7F2] via-[#F4EFE6] to-[#ECE5D8] border border-[#D2C8B8] p-8 sm:p-12 rounded-3xl text-center shadow-lg shadow-black/5 max-w-3xl mx-auto overflow-hidden">
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-lavender/10 rounded-full blur-2xl pointer-events-none" />
 
           <div className="relative">

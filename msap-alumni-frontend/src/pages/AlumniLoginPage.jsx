@@ -135,14 +135,14 @@ export default function AlumniLoginPage() {
   };
 
   return (
-    <div className="relative min-h-[85vh] bg-gradient-to-b from-[#F2EDFA] via-[#FAF9FC] to-[#FAF9FC] flex flex-col items-center justify-center px-5 py-16 overflow-hidden">
+    <div className="relative min-h-[85vh] bg-[#EDE8DE] flex flex-col items-center justify-center px-5 py-16 overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-10 left-1/3 w-80 h-80 bg-lavender/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header */}
       <div className="text-center mb-8 max-w-md animate-heroIn">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lavender-soft text-lavender text-xs font-bold uppercase tracking-wider mb-3 border border-lavender/25">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F9F7F2] text-lavender text-xs font-bold uppercase tracking-wider mb-3 border border-[#D2C8B8]">
           <span>🏛</span> MSAP Alumni Gateway
         </div>
         <h1 className="font-display text-ink text-3xl sm:text-4xl font-bold tracking-tight">
@@ -157,9 +157,9 @@ export default function AlumniLoginPage() {
 
       {/* Login Card */}
       <div className="w-full max-w-md animate-heroInDelay">
-        <div className="border border-parchment-dark/90 bg-white rounded-3xl shadow-[0_20px_60px_-15px_rgba(28,20,46,0.1)] overflow-hidden">
+        <div className="border border-[#D2C8B8] bg-[#F9F7F2] rounded-3xl shadow-[0_20px_60px_-15px_rgba(24,18,36,0.12)] overflow-hidden">
           {/* Segmented Mode Switcher */}
-          <div className="p-3 bg-parchment-subtle/80 border-b border-parchment-dark/80 grid grid-cols-2 gap-2">
+          <div className="p-3 bg-[#E5DFD1] border-b border-[#D2C8B8] grid grid-cols-2 gap-2">
             <button
               type="button"
               onClick={() => {
@@ -169,7 +169,7 @@ export default function AlumniLoginPage() {
               }}
               className={`py-2.5 px-3 text-xs font-bold rounded-xl transition-all cursor-pointer ${
                 mode === 'login'
-                  ? 'bg-white text-ink shadow-sm'
+                  ? 'bg-[#F9F7F2] text-ink shadow-sm'
                   : 'text-stone/70 hover:text-ink'
               }`}
             >
@@ -184,7 +184,7 @@ export default function AlumniLoginPage() {
               }}
               className={`py-2.5 px-3 text-xs font-bold rounded-xl transition-all cursor-pointer ${
                 mode === 'setPassword'
-                  ? 'bg-white text-ink shadow-sm'
+                  ? 'bg-[#F9F7F2] text-ink shadow-sm'
                   : 'text-stone/70 hover:text-ink'
               }`}
             >
@@ -194,7 +194,7 @@ export default function AlumniLoginPage() {
 
           {/* Success Banner */}
           {successMessage && (
-            <div className="mx-6 sm:mx-8 mt-6 p-4 rounded-2xl border border-emerald-200 bg-emerald-50 text-emerald-800 text-xs font-semibold flex items-center gap-2">
+            <div className="mx-6 sm:mx-8 mt-6 p-4 rounded-2xl border border-emerald-300 bg-emerald-100/70 text-emerald-800 text-xs font-semibold flex items-center gap-2">
               <span className="text-base">✓</span>
               <span>{successMessage}</span>
             </div>
@@ -204,7 +204,7 @@ export default function AlumniLoginPage() {
           {error && (
             <div className="mx-6 sm:mx-8 mt-6">
               {errorType === 'not_registered' ? (
-                <div className="p-4 rounded-2xl border border-red-200 bg-red-50 text-red-800 text-xs leading-relaxed space-y-2.5">
+                <div className="p-4 rounded-2xl border border-red-300 bg-red-100/70 text-red-800 text-xs leading-relaxed space-y-2.5">
                   <div className="flex items-start gap-2">
                     <span className="text-base">⚠️</span>
                     <div>
@@ -220,7 +220,7 @@ export default function AlumniLoginPage() {
                   </Link>
                 </div>
               ) : errorType === 'pending' ? (
-                <div className="p-4 rounded-2xl border border-amber-200 bg-amber-50 text-amber-900 text-xs leading-relaxed space-y-1.5">
+                <div className="p-4 rounded-2xl border border-amber-300 bg-amber-100/70 text-amber-900 text-xs leading-relaxed space-y-1.5">
                   <div className="flex items-start gap-2">
                     <span className="text-base">⏳</span>
                     <div>
@@ -233,7 +233,7 @@ export default function AlumniLoginPage() {
                   </p>
                 </div>
               ) : errorType === 'needs_password' ? (
-                <div className="p-4 rounded-2xl border border-lavender/30 bg-lavender-soft text-lavender text-xs leading-relaxed space-y-2.5">
+                <div className="p-4 rounded-2xl border border-lavender/40 bg-[#E4DCF5] text-lavender text-xs leading-relaxed space-y-2.5">
                   <div className="flex items-start gap-2">
                     <span className="text-base">🎉</span>
                     <div>
@@ -254,7 +254,7 @@ export default function AlumniLoginPage() {
                   </button>
                 </div>
               ) : (
-                <div className="p-4 rounded-2xl border border-red-200 bg-red-50 text-red-700 text-xs font-semibold flex items-center gap-2">
+                <div className="p-4 rounded-2xl border border-red-300 bg-red-100/70 text-red-800 text-xs font-semibold flex items-center gap-2">
                   <span>⚠️</span>
                   <span>{error}</span>
                 </div>
@@ -270,7 +270,7 @@ export default function AlumniLoginPage() {
                   type="button"
                   onClick={handleGoogleSignIn}
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-3 border border-parchment-dark bg-white hover:bg-slate-50 text-ink font-bold py-3.5 px-4 rounded-xl shadow-2xs transition-all hover:border-lavender/40 hover:-translate-y-0.5 cursor-pointer disabled:opacity-60 text-sm"
+                  className="w-full flex items-center justify-center gap-3 border border-[#D2C8B8] bg-white hover:bg-[#EDE8DE] text-ink font-bold py-3.5 px-4 rounded-xl shadow-2xs transition-all hover:border-lavender hover:-translate-y-0.5 cursor-pointer disabled:opacity-60 text-sm"
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24">
                     <path
@@ -295,11 +295,11 @@ export default function AlumniLoginPage() {
 
                 {/* Or divider */}
                 <div className="relative flex items-center justify-center my-3">
-                  <div className="border-t border-parchment-dark w-full" />
-                  <span className="bg-white px-3 text-[11px] uppercase tracking-wider text-muted font-bold relative">
+                  <div className="border-t border-[#D2C8B8] w-full" />
+                  <span className="bg-[#F9F7F2] px-3 text-[11px] uppercase tracking-wider text-muted font-bold relative">
                     or with email
                   </span>
-                  <div className="border-t border-parchment-dark w-full" />
+                  <div className="border-t border-[#D2C8B8] w-full" />
                 </div>
               </>
             )}
@@ -321,7 +321,7 @@ export default function AlumniLoginPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     placeholder="you@email.com"
-                    className="w-full border border-parchment-dark/90 bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
+                    className="w-full border border-[#D2C8B8] bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
                   />
                 </div>
               </div>
@@ -351,7 +351,7 @@ export default function AlumniLoginPage() {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     placeholder="Min. 6 characters"
-                    className="w-full border border-parchment-dark/90 bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
+                    className="w-full border border-[#D2C8B8] bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
                   />
                 </div>
               </div>
@@ -373,7 +373,7 @@ export default function AlumniLoginPage() {
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       required
                       placeholder="Re-enter password"
-                      className="w-full border border-parchment-dark/90 bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
+                      className="w-full border border-[#D2C8B8] bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
                     />
                   </div>
                 </div>
@@ -383,7 +383,7 @@ export default function AlumniLoginPage() {
                 id="alumni-submit-btn"
                 type="submit"
                 disabled={loading}
-                className="w-full btn-hover bg-lavender hover:bg-lavender-dark text-white font-bold py-4 rounded-xl shadow-[0_8px_25px_rgba(88,59,156,0.3)] transition-all text-[15px] disabled:opacity-50 cursor-pointer mt-2 flex items-center justify-center gap-2"
+                className="w-full btn-hover bg-lavender hover:bg-lavender-dark text-white font-bold py-4 rounded-xl shadow-[0_8px_25px_rgba(78,45,146,0.3)] transition-all text-[15px] disabled:opacity-50 cursor-pointer mt-2 flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <span>Processing...</span>
@@ -402,7 +402,7 @@ export default function AlumniLoginPage() {
             </form>
           </div>
 
-          <div className="px-6 sm:px-8 py-4 bg-parchment-subtle/50 border-t border-parchment-dark/80 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-stone font-medium">
+          <div className="px-6 sm:px-8 py-4 bg-[#E5DFD1] border-t border-[#D2C8B8] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-stone font-medium">
             <span>Don't have an application submitted yet?</span>
             <Link to="/register" className="font-bold text-lavender hover:underline">
               Register for verification →

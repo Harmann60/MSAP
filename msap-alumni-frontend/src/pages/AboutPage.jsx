@@ -42,13 +42,13 @@ const COMMITTEE = [
 
 export default function AboutPage() {
   return (
-    <div className="relative bg-gradient-to-b from-[#F2EDFA] via-[#FAF9FC] to-[#FAF9FC] min-h-[90vh]">
+    <div className="relative bg-[#EDE8DE] min-h-[90vh]">
       {/* Ambient background glows */}
       <div className="absolute top-10 left-1/4 w-96 h-96 bg-lavender/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header */}
       <div className="relative max-w-6xl mx-auto px-5 pt-16 pb-10 md:pt-20 md:pb-12 text-center md:text-left">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-lavender-soft text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-lavender/25">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F9F7F2] text-lavender text-xs font-bold uppercase tracking-wider mb-4 border border-[#D2C8B8]">
           <span>📜</span> 1973 to 2026 &middot; 50+ Years
         </div>
         <h1 className="font-display text-ink text-3xl sm:text-5xl font-bold tracking-tight mb-3">
@@ -61,7 +61,7 @@ export default function AboutPage() {
 
       <div className="relative max-w-6xl mx-auto px-5 pb-20 md:pb-28 space-y-16">
         {/* Mission Statement Card */}
-        <div className="bg-white border border-parchment-dark/80 rounded-3xl p-8 sm:p-10 shadow-sm">
+        <div className="bg-[#F9F7F2] border border-[#D2C8B8] rounded-3xl p-8 sm:p-10 shadow-sm">
           <div className="max-w-3xl">
             <span className="text-xs font-bold uppercase tracking-widest text-lavender block mb-2">
               Our Foundational Mission
@@ -77,10 +77,10 @@ export default function AboutPage() {
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-parchment-subtle text-xs font-bold text-ink border border-parchment-dark">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#EDE8DE] text-xs font-bold text-ink border border-[#D2C8B8]">
                 🏛 Registered Society: 915/M/SR/2025
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-parchment-subtle text-xs font-bold text-ink border border-parchment-dark">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#EDE8DE] text-xs font-bold text-ink border border-[#D2C8B8]">
                 📍 Imphal West & Pune
               </span>
             </div>
@@ -88,8 +88,8 @@ export default function AboutPage() {
         </div>
 
         {/* Cultural Divider */}
-        <div className="meitei-rule text-lavender/40">
-          <div className="meitei-rule-diamond bg-lavender/50" />
+        <div className="meitei-rule text-lavender/50">
+          <div className="meitei-rule-diamond bg-lavender/60" />
         </div>
 
         {/* 50-Year Interactive Timeline */}
@@ -105,14 +105,14 @@ export default function AboutPage() {
             {TIMELINE.map((item, i) => (
               <div key={i} className="relative group">
                 {/* Node circle */}
-                <div className="absolute -left-6 sm:-left-10 top-1.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white border-2 border-lavender shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="absolute -left-6 sm:-left-10 top-1.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#EDE8DE] border-2 border-lavender shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
                   <div className="w-2 h-2 rounded-full bg-lavender" />
                 </div>
 
-                <div className="bg-white border border-parchment-dark hover:border-lavender/40 p-6 sm:p-7 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                <div className="bg-[#F9F7F2] border border-[#D2C8B8] hover:border-lavender/50 p-6 sm:p-7 rounded-2xl shadow-sm hover:shadow-md transition-all">
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                     <span className="font-display text-2xl font-bold text-lavender">{item.year}</span>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-muted bg-parchment-subtle px-2.5 py-0.5 rounded-md border border-parchment-dark">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-muted bg-[#EDE8DE] px-2.5 py-0.5 rounded-md border border-[#D2C8B8]">
                       {item.highlight}
                     </span>
                   </div>
@@ -140,7 +140,7 @@ export default function AboutPage() {
             {COMMITTEE.map((m, i) => (
               <div
                 key={i}
-                className="p-6 bg-white border border-parchment-dark rounded-2xl shadow-sm hover:border-lavender/40 transition-all flex flex-col justify-between"
+                className="p-6 bg-[#F9F7F2] border border-[#D2C8B8] rounded-2xl shadow-sm hover:border-lavender/50 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="text-xs font-bold uppercase tracking-wider text-lavender mb-1">
@@ -155,7 +155,7 @@ export default function AboutPage() {
         </div>
 
         {/* Contact Information & Registered Address */}
-        <div className="bg-gradient-to-br from-white to-[#FAF9FC] border border-parchment-dark rounded-3xl p-8 sm:p-10 shadow-sm">
+        <div className="bg-[#F9F7F2] border border-[#D2C8B8] rounded-3xl p-8 sm:p-10 shadow-sm">
           <div className="grid md:grid-cols-2 gap-10">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-lavender block mb-2">
@@ -173,7 +173,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="flex flex-col justify-center bg-lavender-subtle/50 p-6 rounded-2xl border border-lavender/20">
+            <div className="flex flex-col justify-center bg-[#EDE8DE] p-6 rounded-2xl border border-[#D2C8B8]">
               <h4 className="font-display text-ink text-lg font-bold mb-2">Get in Touch</h4>
               <p className="text-stone text-xs leading-relaxed mb-4">
                 For questions regarding society registration, verification documents, or chapter initiatives, reach out directly.
@@ -184,7 +184,7 @@ export default function AboutPage() {
               >
                 <span>✉️ alumni.msap1973@gmail.com</span>
               </a>
-              <div className="mt-4 pt-4 border-t border-lavender/20">
+              <div className="mt-4 pt-4 border-t border-[#D2C8B8]">
                 <Link to="/accounts" className="text-xs font-bold text-ink hover:text-lavender transition-colors">
                   View Financial Transparency & Audit Ledger →
                 </Link>

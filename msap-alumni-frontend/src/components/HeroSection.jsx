@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 
 export default function HeroSection() {
   return (
-    <div className="relative bg-gradient-to-b from-[#F2EDFA] via-[#FAF9FC] to-[#FAF9FC] text-ink overflow-hidden border-b border-parchment-dark/70">
+    <div className="relative bg-gradient-to-b from-[#E7E0D3] via-[#EDE8DE] to-[#EDE8DE] text-ink overflow-hidden border-b border-[#D2C8B8]">
       {/* Ambient background glow layers */}
-      <div className="absolute top-[-10%] left-[15%] w-[480px] h-[480px] bg-gradient-to-br from-lavender/15 to-transparent rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
+      <div className="absolute top-[-10%] left-[15%] w-[480px] h-[480px] bg-gradient-to-br from-lavender/12 to-transparent rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
       <div className="absolute top-[20%] right-[-5%] w-[420px] h-[420px] bg-gradient-to-bl from-gold/15 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-5 py-16 md:py-24 lg:py-28">
@@ -12,7 +12,7 @@ export default function HeroSection() {
           {/* Left copy */}
           <div className="lg:col-span-7 animate-heroIn">
             {/* Golden Jubilee & Heritage Pill */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 border border-lavender/30 text-lavender text-xs font-bold uppercase tracking-wider mb-6 shadow-sm backdrop-blur-md">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#F9F7F2] border border-[#D2C8B8] text-lavender text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lavender opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-lavender" />
@@ -35,7 +35,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 to="/register"
-                className="group relative inline-flex items-center gap-2.5 bg-lavender hover:bg-lavender-dark text-white font-bold px-8 py-4 rounded-xl shadow-[0_8px_25px_rgba(88,59,156,0.3)] transition-all text-base hover:-translate-y-0.5 active:translate-y-0"
+                className="group relative inline-flex items-center gap-2.5 bg-lavender hover:bg-lavender-dark text-white font-bold px-8 py-4 rounded-xl shadow-[0_8px_25px_rgba(78,45,146,0.3)] transition-all text-base hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>Register for Verification</span>
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -44,23 +44,23 @@ export default function HeroSection() {
               </Link>
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 bg-white/90 hover:bg-white border-2 border-parchment-dark hover:border-lavender text-stone hover:text-ink font-bold px-7 py-4 rounded-xl transition-all text-base hover:-translate-y-0.5 shadow-sm backdrop-blur-md"
+                className="inline-flex items-center gap-2 bg-[#F9F7F2] hover:bg-white border-2 border-[#D2C8B8] hover:border-lavender text-stone hover:text-ink font-bold px-7 py-4 rounded-xl transition-all text-base hover:-translate-y-0.5 shadow-sm"
               >
                 <span>Our Heritage</span>
               </Link>
             </div>
 
             {/* High-fidelity stats grid */}
-            <div className="mt-12 pt-8 border-t border-parchment-dark/80 grid grid-cols-3 gap-4 sm:gap-6 max-w-lg">
-              <div className="bg-white/60 backdrop-blur-sm p-3.5 rounded-2xl border border-parchment-dark/60">
+            <div className="mt-12 pt-8 border-t border-[#D2C8B8] grid grid-cols-3 gap-4 sm:gap-6 max-w-lg">
+              <div className="bg-[#F9F7F2]/90 p-3.5 rounded-2xl border border-[#D2C8B8] shadow-2xs">
                 <div className="font-display text-2xl sm:text-3xl font-bold text-ink">50+</div>
                 <div className="text-[11px] sm:text-xs text-muted font-bold uppercase tracking-wider mt-0.5">Years Legacy</div>
               </div>
-              <div className="bg-white/60 backdrop-blur-sm p-3.5 rounded-2xl border border-parchment-dark/60">
+              <div className="bg-[#F9F7F2]/90 p-3.5 rounded-2xl border border-[#D2C8B8] shadow-2xs">
                 <div className="font-display text-2xl sm:text-3xl font-bold text-lavender">2,000+</div>
                 <div className="text-[11px] sm:text-xs text-muted font-bold uppercase tracking-wider mt-0.5">Alumni Global</div>
               </div>
-              <div className="bg-white/60 backdrop-blur-sm p-3.5 rounded-2xl border border-parchment-dark/60">
+              <div className="bg-[#F9F7F2]/90 p-3.5 rounded-2xl border border-[#D2C8B8] shadow-2xs">
                 <div className="font-display text-2xl sm:text-3xl font-bold text-ink">Annual</div>
                 <div className="text-[11px] sm:text-xs text-muted font-bold uppercase tracking-wider mt-0.5">Meets & Events</div>
               </div>
@@ -69,7 +69,7 @@ export default function HeroSection() {
 
           {/* Right: Ambient video card */}
           <div className="lg:col-span-5 animate-heroInDelay">
-            <div className="relative rounded-3xl p-2 bg-gradient-to-tr from-lavender/30 via-white/80 to-gold/25 shadow-[0_20px_60px_-15px_rgba(88,59,156,0.18)] border border-white">
+            <div className="relative rounded-3xl p-2 bg-gradient-to-tr from-lavender/30 via-[#F9F7F2] to-gold/30 shadow-[0_20px_60px_-15px_rgba(78,45,146,0.18)] border border-[#D2C8B8]">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-ink shadow-inner group">
                 <video
                   autoPlay muted loop playsInline preload="auto"
@@ -82,7 +82,7 @@ export default function HeroSection() {
 
                 {/* Floating badge top right */}
                 <div className="absolute top-4 right-4">
-                  <span className="text-[11px] font-bold uppercase tracking-wider bg-black/40 backdrop-blur-md text-gold-soft border border-gold/40 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+                  <span className="text-[11px] font-bold uppercase tracking-wider bg-black/50 backdrop-blur-md text-gold-soft border border-gold/40 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-gold inline-block" />
                     Golden Jubilee
                   </span>

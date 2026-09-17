@@ -9,7 +9,7 @@ const EVENTS = [
     title: 'Annual MSAP Alumni Meet 2026',
     location: 'Symbiosis Campus &middot; Pune',
     category: 'Flagship Reunion',
-    badgeColor: 'bg-lavender-soft text-lavender border-lavender/25',
+    badgeColor: 'bg-[#E4DCF5] text-lavender border-lavender/30',
     time: '5:00 PM IST',
   },
   {
@@ -20,7 +20,7 @@ const EVENTS = [
     title: 'Global Career & Mentorship Night',
     location: 'Virtual / Google Meet',
     category: 'Career & Tech',
-    badgeColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    badgeColor: 'bg-emerald-100/70 text-emerald-800 border-emerald-300',
     time: '7:30 PM IST',
   },
   {
@@ -31,7 +31,7 @@ const EVENTS = [
     title: 'Yaoshang Cultural Festival',
     location: 'Classic Grande &middot; Imphal',
     category: 'Culture & Heritage',
-    badgeColor: 'bg-amber-50 text-amber-800 border-amber-200',
+    badgeColor: 'bg-amber-100/70 text-amber-900 border-amber-300',
     time: '4:00 PM IST',
   },
   {
@@ -42,27 +42,27 @@ const EVENTS = [
     title: 'New Graduates Pune Welcome',
     location: 'FC Road &middot; Pune',
     category: 'Youth Onboarding',
-    badgeColor: 'bg-purple-50 text-purple-700 border-purple-200',
+    badgeColor: 'bg-purple-100/70 text-purple-800 border-purple-300',
     time: '6:00 PM IST',
   },
 ];
 
 export default function EventsSection() {
   return (
-    <section className="relative bg-gradient-to-b from-[#FAF9FC] via-[#F4EFFB] to-[#FAF9FC] border-y border-parchment-dark/70 py-16 md:py-24 overflow-hidden">
+    <section className="relative bg-[#E5DFD1] border-y border-[#D2C8B8] py-16 md:py-24 overflow-hidden">
       {/* Subtle ambient light */}
       <div className="absolute -top-32 right-1/4 w-80 h-80 bg-lavender/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-5">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 border border-lavender/25 text-lavender text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F9F7F2] border border-[#D2C8B8] text-lavender text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
               <span>🗓</span> Calendar of Gatherings
             </div>
             <h2 className="font-display text-ink text-3xl sm:text-4xl font-bold tracking-tight">
               Reunions & Upcoming Events
             </h2>
-            <p className="text-muted text-base mt-2 max-w-xl">
+            <p className="text-stone/80 text-base mt-2 max-w-xl">
               From the flagship Pune Annual Meet to international chapter mixers and cultural celebrations.
             </p>
           </div>
@@ -82,12 +82,12 @@ export default function EventsSection() {
             <Link
               key={event.id}
               to="/events"
-              className="group card-lift bg-white border border-parchment-dark hover:border-lavender/40 p-6 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="group card-lift bg-[#F9F7F2] border border-[#D2C8B8] hover:border-lavender/50 p-6 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Header with Calendar block and category */}
                 <div className="flex items-start justify-between gap-3 mb-5">
-                  <div className="flex flex-col items-center justify-center w-14 h-14 rounded-2xl bg-lavender-subtle border border-lavender/20 text-center shrink-0 group-hover:bg-lavender group-hover:text-white transition-colors duration-300">
+                  <div className="flex flex-col items-center justify-center w-14 h-14 rounded-2xl bg-[#EDE8DE] border border-[#D2C8B8] text-center shrink-0 group-hover:bg-lavender group-hover:text-white transition-colors duration-300">
                     <span className="text-[10px] font-bold tracking-widest uppercase block leading-none text-lavender group-hover:text-white/90">
                       {event.month}
                     </span>
@@ -113,7 +113,7 @@ export default function EventsSection() {
                 </div>
               </div>
 
-              <div className="pt-4 mt-2 border-t border-parchment-dark/70 text-xs font-bold text-lavender flex items-center justify-between">
+              <div className="pt-4 mt-2 border-t border-[#D2C8B8] text-xs font-bold text-lavender flex items-center justify-between">
                 <span>View Details & RSVP</span>
                 <span className="group-hover:translate-x-1.5 transition-transform text-base">→</span>
               </div>

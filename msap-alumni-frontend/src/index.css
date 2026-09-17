@@ -5,36 +5,38 @@
   --font-display: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
-  /* Deep lavender ink for high contrast, eye-comforting reading */
-  --color-ink: #1C142E;
-  --color-ink-light: #2D204A;
-  --color-ink-lighter: #423269;
+  /* Deep ink for high contrast reading */
+  --color-ink: #181224;
+  --color-ink-light: #281F38;
+  --color-ink-lighter: #3D3252;
 
-  /* Dignified royal lavender for highlights, buttons & tabs */
-  --color-vermilion: #583B9C;
-  --color-vermilion-light: #4A2F8A;
+  /* Royal heritage purple / lavender */
+  --color-vermilion: #4E2D92;
+  --color-vermilion-light: #3D1F7B;
 
-  --color-lavender: #583B9C;
-  --color-lavender-dark: #462A82;
-  --color-lavender-light: #6D4EB5;
-  --color-lavender-soft: #EAE3F7;
-  --color-lavender-subtle: #F3EDFA;
-  --color-lavender-border: #CEC2E8;
+  --color-lavender: #4E2D92;
+  --color-lavender-dark: #3A1B73;
+  --color-lavender-light: #6540B2;
+  --color-lavender-soft: #E4DCF5;
+  --color-lavender-subtle: #ECE5F8;
+  --color-lavender-border: #BAA9DD;
 
   /* Warm heritage gold */
-  --color-gold: #B37D28;
-  --color-gold-light: #D69C3D;
-  --color-gold-soft: #FAF3E6;
-  --color-gold-border: #E8D3A7;
+  --color-gold: #B8842A;
+  --color-gold-light: #D49C3D;
+  --color-gold-soft: #F5ECD9;
+  --color-gold-border: #DBC598;
 
-  /* Eye-comforting soft lavender-tinted off-white foundations */
-  --color-parchment: #F6F3FB;
-  --color-parchment-subtle: #EDE7F6;
-  --color-parchment-dark: #D8CCE8;
+  /* Darker, rich off-white & parchment foundations */
+  --color-parchment: #EDE8DE;
+  --color-parchment-subtle: #E5DFD1;
+  --color-parchment-card: #F9F7F2;
+  --color-parchment-dark: #D2C8B8;
+  --color-parchment-border: #C8BDAA;
 
-  /* High contrast, easy-reading body copy and metadata */
-  --color-stone: #2D2342;
-  --color-muted: #544A6E;
+  /* High contrast body copy and metadata */
+  --color-stone: #2A2136;
+  --color-muted: #564D66;
 
   /* Status */
   --color-verified: #15803D;
@@ -47,12 +49,13 @@
 
   html {
     scroll-behavior: smooth;
+    background: #EDE8DE;
   }
 
   body {
     font-family: var(--font-sans);
-    background: var(--color-parchment);
-    color: var(--color-stone);
+    background: #EDE8DE;
+    color: #2A2136;
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -65,17 +68,18 @@
     min-height: 100svh;
     display: flex;
     flex-direction: column;
+    background: #EDE8DE;
   }
 
   ::selection {
-    background: var(--color-lavender);
-    color: white;
+    background: #4E2D92;
+    color: #FAF8F4;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: 600;
-    color: var(--color-ink);
+    color: #181224;
     line-height: 1.2;
     letter-spacing: -0.01em;
   }
@@ -84,20 +88,20 @@
     color: inherit;
   }
 
-  /* Custom scrollbar for modern sleek aesthetic */
+  /* Custom scrollbar matching darker parchment */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #F0EAF8;
+    background: #E5DFD1;
   }
   ::-webkit-scrollbar-thumb {
-    background: #C4B5E0;
+    background: #C4B9A7;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #9D84CF;
+    background: #A89B84;
   }
 }
 
@@ -110,28 +114,28 @@
     font-family: var(--font-sans);
   }
 
-  /* Glassmorphism primitives */
+  /* Off-white Glassmorphism primitives */
   .glass-card {
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(249, 247, 242, 0.94);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(216, 204, 232, 0.8);
-    box-shadow: 0 10px 30px -8px rgba(35, 26, 56, 0.07);
+    border: 1px solid #D2C8B8;
+    box-shadow: 0 10px 30px -8px rgba(24, 18, 36, 0.08);
   }
 
   .glass-nav {
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(249, 247, 242, 0.94);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(216, 204, 232, 0.7);
-    box-shadow: 0 4px 20px -2px rgba(28, 20, 46, 0.04);
+    border-bottom: 1px solid #D2C8B8;
+    box-shadow: 0 4px 20px -2px rgba(24, 18, 36, 0.06);
   }
 
   .glass-pill {
-    background: rgba(234, 227, 247, 0.75);
+    background: rgba(245, 236, 217, 0.85);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(109, 78, 181, 0.25);
+    border: 1px solid #D2C8B8;
   }
 
   /* Micro-interactions & animations */
@@ -140,7 +144,7 @@
   }
   .card-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 35px -10px rgba(88, 59, 156, 0.12), 0 2px 10px -2px rgba(28, 20, 46, 0.05);
+    box-shadow: 0 20px 35px -10px rgba(78, 45, 146, 0.14), 0 2px 10px -2px rgba(24, 18, 36, 0.08);
   }
 
   .btn-hover {
@@ -186,7 +190,7 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    opacity: 0.35;
+    opacity: 0.45;
   }
 
   .meitei-rule::before,

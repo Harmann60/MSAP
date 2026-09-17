@@ -35,13 +35,13 @@ export default function StoriesSection() {
     <section className="max-w-6xl mx-auto px-5 py-16 md:py-24">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lavender-soft text-lavender text-xs font-bold uppercase tracking-wider mb-3 border border-lavender/25">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E5DFD1] text-lavender text-xs font-bold uppercase tracking-wider mb-3 border border-[#D2C8B8]">
             <span>📖</span> Chronicles & Milestones
           </div>
           <h2 className="font-display text-ink text-3xl sm:text-4xl font-bold tracking-tight">
             Stories from MSAP Alumni
           </h2>
-          <p className="text-muted text-base mt-2 max-w-xl">
+          <p className="text-stone/80 text-base mt-2 max-w-xl">
             Journeys of leadership, lifelong friendships, and 50 years of unforgettable memories.
           </p>
         </div>
@@ -61,9 +61,9 @@ export default function StoriesSection() {
           <Link
             key={story.id}
             to="/stories"
-            className="group card-lift bg-white border border-parchment-dark hover:border-lavender/40 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
+            className="group card-lift bg-[#F9F7F2] border border-[#D2C8B8] hover:border-lavender/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
           >
-            <div className="aspect-[16/10] overflow-hidden bg-parchment-subtle relative">
+            <div className="aspect-[16/10] overflow-hidden bg-[#E5DFD1] relative">
               <img
                 src={story.image}
                 alt={story.title}
@@ -71,12 +71,12 @@ export default function StoriesSection() {
                 loading="lazy"
               />
               <div className="absolute top-3.5 left-3.5">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-lavender bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-lavender/20 shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-lavender bg-[#F9F7F2]/95 backdrop-blur-md px-3 py-1 rounded-full border border-[#D2C8B8] shadow-sm">
                   {story.category}
                 </span>
               </div>
               <div className="absolute bottom-3 right-3">
-                <span className="text-[10px] font-semibold text-white bg-black/50 backdrop-blur-md px-2.5 py-0.5 rounded-full">
+                <span className="text-[10px] font-semibold text-white bg-black/60 backdrop-blur-md px-2.5 py-0.5 rounded-full">
                   {story.readTime}
                 </span>
               </div>
@@ -84,16 +84,16 @@ export default function StoriesSection() {
 
             <div className="p-6 flex-1 flex flex-col justify-between">
               <div>
-                <p className="text-[11px] font-medium text-muted mb-2.5" dangerouslySetInnerHTML={{ __html: story.author }} />
+                <p className="text-[11px] font-medium text-stone/70 mb-2.5" dangerouslySetInnerHTML={{ __html: story.author }} />
                 <h3 className="font-display text-ink text-xl font-bold leading-snug mb-3 group-hover:text-lavender transition-colors">
                   {story.title}
                 </h3>
-                <p className="text-[14px] text-stone/90 leading-relaxed line-clamp-3 font-normal">
+                <p className="text-[14px] text-stone/85 leading-relaxed line-clamp-3 font-normal">
                   {story.excerpt}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-parchment-dark/70 text-xs font-bold text-lavender flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-[#D2C8B8] text-xs font-bold text-lavender flex items-center justify-between">
                 <span>Read Full Chronicle</span>
                 <span className="group-hover:translate-x-1.5 transition-transform text-base">→</span>
               </div>
