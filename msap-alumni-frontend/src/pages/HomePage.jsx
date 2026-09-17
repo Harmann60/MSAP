@@ -9,6 +9,13 @@ export default function HomePage() {
     <div>
       <HeroSection />
 
+      {/* Cultural Meitei Mayek single divider */}
+      <div className="max-w-4xl mx-auto px-5 my-2">
+        <div className="meitei-rule">
+          <div className="meitei-rule-diamond" />
+        </div>
+      </div>
+
       <StoriesSection />
 
       <EventsSection />

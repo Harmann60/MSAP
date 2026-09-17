@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function HeroSection() {
   return (
     <div className="relative bg-page text-ink overflow-hidden">
-      <div className="relative max-w-6xl mx-auto px-5 py-16 md:py-24 lg:py-28">
+      <div className="relative max-w-6xl mx-auto px-5 pt-16 pb-12 md:pt-20 md:pb-14">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           {/* Left copy */}
           <div className="lg:col-span-7 animate-heroIn">
