@@ -8,6 +8,7 @@ export default function AlumniLoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [errorType, setErrorType] = useState(''); // 'not_registered' | 'pending' | 'needs_password' | 'rejected' | 'generic'
   const [successMessage, setSuccessMessage] = useState('');
@@ -23,7 +24,12 @@ export default function AlumniLoginPage() {
 
   const categorizeError = (msg = '') => {
     const lower = msg.toLowerCase();
-    if (lower.includes('not been registered') || lower.includes('not registered') || lower.includes('no application found') || lower.includes('no alumni registration')) {
+    if (
+      lower.includes('not been registered') ||
+      lower.includes('not registered') ||
+      lower.includes('no application found') ||
+      lower.includes('no alumni registration')
+    ) {
       return 'not_registered';
     }
     if (lower.includes('pending') || lower.includes('under review')) {
@@ -32,7 +38,11 @@ export default function AlumniLoginPage() {
     if (lower.includes('not approved') || lower.includes('rejected')) {
       return 'rejected';
     }
-    if (lower.includes('password has been created') || lower.includes('no account password') || lower.includes('complete your account setup')) {
+    if (
+      lower.includes('password has been created') ||
+      lower.includes('no account password') ||
+      lower.includes('complete your account setup')
+    ) {
       return 'needs_password';
     }
     return 'generic';
@@ -85,7 +95,8 @@ export default function AlumniLoginPage() {
         handleAuthSuccess(data);
       }
     } catch (err) {
-      const msg = err.message || 'Unable to sign in. Please verify your credentials or wait for admin verification.';
+      const msg =
+        err.message || 'Unable to sign in. Please verify your credentials or wait for admin verification.';
       setError(msg);
       setErrorType(categorizeError(msg));
     } finally {
@@ -100,8 +111,6 @@ export default function AlumniLoginPage() {
     setLoading(true);
 
     try {
-      // In development or when Google Client ID isn't pre-configured in browser window,
-      // prompt user for their Google email or use the entered email
       let targetEmail = email.trim();
       if (!targetEmail) {
         targetEmail = window.prompt(
@@ -126,61 +135,68 @@ export default function AlumniLoginPage() {
   };
 
   return (
-    <div className="min-h-[85vh] bg-gradient-to-b from-[#F2EDFA] to-[#FAF9FC] flex flex-col items-center justify-center px-5 py-16">
+    <div className="relative min-h-[85vh] bg-gradient-to-b from-[#F2EDFA] via-[#FAF9FC] to-[#FAF9FC] flex flex-col items-center justify-center px-5 py-16 overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-10 left-1/3 w-80 h-80 bg-lavender/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+
       {/* Header */}
       <div className="text-center mb-8 max-w-md animate-heroIn">
-        <span className="text-[11px] font-bold uppercase tracking-widest text-lavender block mb-1">
-          Manipur Students' Association Pune
-        </span>
-        <h1 className="font-display text-ink text-3xl md:text-4xl font-bold">
-          {mode === 'login' ? 'Alumni Sign In' : 'Set Account Password'}
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lavender-soft text-lavender text-xs font-bold uppercase tracking-wider mb-3 border border-lavender/25">
+          <span>🏛</span> MSAP Alumni Gateway
+        </div>
+        <h1 className="font-display text-ink text-3xl sm:text-4xl font-bold tracking-tight">
+          {mode === 'login' ? 'Alumni Sign In' : 'Activate Account Password'}
         </h1>
         <p className="text-muted text-sm mt-2">
           {mode === 'login'
-            ? 'Access the verified directory, event invites, and network updates.'
-            : 'For approved alumni: link your password to your verified record to activate your account.'}
+            ? 'Access the verified directory, exclusive event invites, and chapter updates.'
+            : 'For approved alumni: set your permanent password to activate full network access.'}
         </p>
-      </div>
-
-      {/* Decorative divider */}
-      <div className="w-20 mx-auto mb-8 flex items-center gap-3 opacity-30">
-        <div className="h-px flex-1 bg-lavender" />
-        <div className="w-1.5 h-1.5 bg-lavender rotate-45" />
-        <div className="h-px flex-1 bg-lavender" />
       </div>
 
       {/* Login Card */}
       <div className="w-full max-w-md animate-heroInDelay">
-        <div className="border-2 border-parchment-dark bg-white rounded-3xl shadow-[0_16px_50px_rgba(28,20,46,0.1)] overflow-hidden">
-          {/* Card Header & Mode Switcher */}
-          <div className="p-6 sm:p-8 border-b-2 border-parchment-dark bg-gradient-to-r from-[#FAF9FC] to-[#F3EEFA]">
-            <div className="flex items-center justify-between">
-              <div>
-                <h2 className="font-display text-ink text-2xl font-bold">
-                  {mode === 'login' ? 'Sign in to account' : 'Create password'}
-                </h2>
-                <p className="text-muted text-xs font-semibold mt-1">
-                  {mode === 'login' ? 'For verified alumni members' : '3–5 days after admin approval'}
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => {
-                  setMode(mode === 'login' ? 'setPassword' : 'login');
-                  setError('');
-                  setErrorType('');
-                }}
-                className="text-xs font-bold text-lavender hover:text-lavender-dark underline decoration-lavender/40 hover:decoration-lavender transition-all"
-              >
-                {mode === 'login' ? 'Approved? Set password' : 'Back to Sign In'}
-              </button>
-            </div>
+        <div className="border border-parchment-dark/90 bg-white rounded-3xl shadow-[0_20px_60px_-15px_rgba(28,20,46,0.1)] overflow-hidden">
+          {/* Segmented Mode Switcher */}
+          <div className="p-3 bg-parchment-subtle/80 border-b border-parchment-dark/80 grid grid-cols-2 gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                setMode('login');
+                setError('');
+                setErrorType('');
+              }}
+              className={`py-2.5 px-3 text-xs font-bold rounded-xl transition-all cursor-pointer ${
+                mode === 'login'
+                  ? 'bg-white text-ink shadow-sm'
+                  : 'text-stone/70 hover:text-ink'
+              }`}
+            >
+              Sign In to Account
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setMode('setPassword');
+                setError('');
+                setErrorType('');
+              }}
+              className={`py-2.5 px-3 text-xs font-bold rounded-xl transition-all cursor-pointer ${
+                mode === 'setPassword'
+                  ? 'bg-white text-ink shadow-sm'
+                  : 'text-stone/70 hover:text-ink'
+              }`}
+            >
+              Set New Password
+            </button>
           </div>
 
           {/* Success Banner */}
           {successMessage && (
-            <div className="mx-6 sm:mx-8 mt-6 p-4 rounded-2xl border-2 border-green-200 bg-green-50 text-green-800 text-xs font-semibold leading-relaxed">
-              {successMessage}
+            <div className="mx-6 sm:mx-8 mt-6 p-4 rounded-2xl border border-emerald-200 bg-emerald-50 text-emerald-800 text-xs font-semibold flex items-center gap-2">
+              <span className="text-base">✓</span>
+              <span>{successMessage}</span>
             </div>
           )}
 
@@ -188,38 +204,38 @@ export default function AlumniLoginPage() {
           {error && (
             <div className="mx-6 sm:mx-8 mt-6">
               {errorType === 'not_registered' ? (
-                <div className="p-4 rounded-2xl border-2 border-red-200 bg-red-50 text-red-800 text-xs leading-relaxed space-y-2.5">
+                <div className="p-4 rounded-2xl border border-red-200 bg-red-50 text-red-800 text-xs leading-relaxed space-y-2.5">
                   <div className="flex items-start gap-2">
-                    <span className="text-base leading-none">⚠️</span>
+                    <span className="text-base">⚠️</span>
                     <div>
-                      <strong className="block font-bold">Email Not Found</strong>
+                      <strong className="block font-bold">Email Not Registered</strong>
                       <span>{error}</span>
                     </div>
                   </div>
                   <Link
                     to="/register"
-                    className="inline-block w-full text-center bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-xl transition-all shadow-sm"
+                    className="inline-block w-full text-center bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-4 rounded-xl transition-all shadow-sm"
                   >
                     Submit Alumni Verification Application →
                   </Link>
                 </div>
               ) : errorType === 'pending' ? (
-                <div className="p-4 rounded-2xl border-2 border-amber-200 bg-amber-50 text-amber-900 text-xs leading-relaxed space-y-1.5">
+                <div className="p-4 rounded-2xl border border-amber-200 bg-amber-50 text-amber-900 text-xs leading-relaxed space-y-1.5">
                   <div className="flex items-start gap-2">
-                    <span className="text-base leading-none">⏳</span>
+                    <span className="text-base">⏳</span>
                     <div>
-                      <strong className="block font-bold text-amber-950">Verification in Progress</strong>
+                      <strong className="block font-bold text-amber-950">Verification Under Review</strong>
                       <span>{error}</span>
                     </div>
                   </div>
                   <p className="text-[11px] text-amber-800 mt-1">
-                    Once the administrator verifies your details, you can sign in directly with Google or set your account password.
+                    Once the administrator verifies your credentials, you will receive an email confirmation.
                   </p>
                 </div>
               ) : errorType === 'needs_password' ? (
-                <div className="p-4 rounded-2xl border-2 border-lavender/50 bg-lavender-soft text-lavender text-xs leading-relaxed space-y-2.5">
+                <div className="p-4 rounded-2xl border border-lavender/30 bg-lavender-soft text-lavender text-xs leading-relaxed space-y-2.5">
                   <div className="flex items-start gap-2">
-                    <span className="text-base leading-none">🎉</span>
+                    <span className="text-base">🎉</span>
                     <div>
                       <strong className="block font-bold">Account Approved!</strong>
                       <span>{error}</span>
@@ -232,29 +248,29 @@ export default function AlumniLoginPage() {
                       setError('');
                       setErrorType('');
                     }}
-                    className="w-full bg-lavender hover:bg-lavender-dark text-white font-bold py-2 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
+                    className="w-full bg-lavender hover:bg-lavender-dark text-white font-bold py-2.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
                   >
-                    Create Account Password Now →
+                    Set Your Password Now →
                   </button>
                 </div>
               ) : (
-                <div className="p-4 rounded-2xl border-2 border-lavender/40 bg-lavender-soft text-lavender text-xs leading-relaxed font-semibold">
-                  <strong className="block font-bold mb-0.5">Notice:</strong>
-                  {error}
+                <div className="p-4 rounded-2xl border border-red-200 bg-red-50 text-red-700 text-xs font-semibold flex items-center gap-2">
+                  <span>⚠️</span>
+                  <span>{error}</span>
                 </div>
               )}
             </div>
           )}
 
           <div className="p-6 sm:p-8 space-y-5">
-            {/* Google Sign-In Button (matches Wireframe Modal) */}
+            {/* Google Sign-In Button */}
             {mode === 'login' && (
               <>
                 <button
                   type="button"
                   onClick={handleGoogleSignIn}
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-3 border-2 border-parchment-dark bg-white hover:bg-slate-50 text-ink font-semibold py-3.5 px-4 rounded-xl shadow-sm transition-all hover:border-lavender/40 hover:-translate-y-0.5 cursor-pointer disabled:opacity-60 text-sm"
+                  className="w-full flex items-center justify-center gap-3 border border-parchment-dark bg-white hover:bg-slate-50 text-ink font-bold py-3.5 px-4 rounded-xl shadow-2xs transition-all hover:border-lavender/40 hover:-translate-y-0.5 cursor-pointer disabled:opacity-60 text-sm"
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24">
                     <path
@@ -278,10 +294,10 @@ export default function AlumniLoginPage() {
                 </button>
 
                 {/* Or divider */}
-                <div className="relative flex items-center justify-center my-4">
+                <div className="relative flex items-center justify-center my-3">
                   <div className="border-t border-parchment-dark w-full" />
-                  <span className="bg-white px-3 text-xs uppercase tracking-wider text-muted font-bold relative">
-                    or
+                  <span className="bg-white px-3 text-[11px] uppercase tracking-wider text-muted font-bold relative">
+                    or with email
                   </span>
                   <div className="border-t border-parchment-dark w-full" />
                 </div>
@@ -290,54 +306,76 @@ export default function AlumniLoginPage() {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-ink mb-2">
+                <label className="block text-xs font-bold uppercase tracking-wider text-ink mb-1.5">
                   Email Address
                 </label>
-                <input
-                  id="alumni-email"
-                  type="email"
-                  autoComplete="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  placeholder="you@email.com"
-                  className="w-full border-2 border-parchment-dark bg-white px-4 py-3 rounded-xl text-base text-ink focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/60"
-                />
+                <div className="relative">
+                  <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted text-sm">
+                    ✉️
+                  </span>
+                  <input
+                    id="alumni-email"
+                    type="email"
+                    autoComplete="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    placeholder="you@email.com"
+                    className="w-full border border-parchment-dark/90 bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
+                  />
+                </div>
               </div>
 
               <div>
-                <div className="flex justify-between items-center mb-2">
+                <div className="flex justify-between items-center mb-1.5">
                   <label className="block text-xs font-bold uppercase tracking-wider text-ink">
                     {mode === 'login' ? 'Password' : 'New Password'}
                   </label>
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="text-[11px] font-semibold text-muted hover:text-lavender cursor-pointer"
+                  >
+                    {showPassword ? 'Hide 👁' : 'Show 👁'}
+                  </button>
                 </div>
-                <input
-                  id="alumni-password"
-                  type="password"
-                  autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  placeholder="Min. 6 characters"
-                  className="w-full border-2 border-parchment-dark bg-white px-4 py-3 rounded-xl text-base text-ink focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/60"
-                />
+                <div className="relative">
+                  <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted text-sm">
+                    🔑
+                  </span>
+                  <input
+                    id="alumni-password"
+                    type={showPassword ? 'text' : 'password'}
+                    autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    placeholder="Min. 6 characters"
+                    className="w-full border border-parchment-dark/90 bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
+                  />
+                </div>
               </div>
 
               {mode === 'setPassword' && (
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-ink mb-2">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-ink mb-1.5">
                     Confirm Password
                   </label>
-                  <input
-                    id="alumni-confirm-password"
-                    type="password"
-                    autoComplete="new-password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    required
-                    placeholder="Re-enter password"
-                    className="w-full border-2 border-parchment-dark bg-white px-4 py-3 rounded-xl text-base text-ink focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/60"
-                  />
+                  <div className="relative">
+                    <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted text-sm">
+                      🔒
+                    </span>
+                    <input
+                      id="alumni-confirm-password"
+                      type={showPassword ? 'text' : 'password'}
+                      autoComplete="new-password"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      required
+                      placeholder="Re-enter password"
+                      className="w-full border border-parchment-dark/90 bg-white pl-10 pr-4 py-3 rounded-xl text-[15px] text-ink font-medium focus:outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/25 transition-all placeholder:text-muted/50"
+                    />
+                  </div>
                 </div>
               )}
 
@@ -345,18 +383,26 @@ export default function AlumniLoginPage() {
                 id="alumni-submit-btn"
                 type="submit"
                 disabled={loading}
-                className="w-full bg-lavender hover:bg-lavender-dark text-white font-bold py-4 rounded-xl shadow-md transition-all text-base disabled:opacity-50 cursor-pointer hover:-translate-y-0.5 mt-2"
+                className="w-full btn-hover bg-lavender hover:bg-lavender-dark text-white font-bold py-4 rounded-xl shadow-[0_8px_25px_rgba(88,59,156,0.3)] transition-all text-[15px] disabled:opacity-50 cursor-pointer mt-2 flex items-center justify-center gap-2"
               >
-                {loading
-                  ? 'Processing...'
-                  : mode === 'login'
-                  ? 'Sign In →'
-                  : 'Activate & Set Password →'}
+                {loading ? (
+                  <span>Processing...</span>
+                ) : mode === 'login' ? (
+                  <>
+                    <span>Sign In to Alumni Network</span>
+                    <span>→</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Activate Account & Sign In</span>
+                    <span>→</span>
+                  </>
+                )}
               </button>
             </form>
           </div>
 
-          <div className="px-6 sm:px-8 py-5 bg-[#FAF9FC] border-t-2 border-parchment-dark flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-stone font-medium">
+          <div className="px-6 sm:px-8 py-4 bg-parchment-subtle/50 border-t border-parchment-dark/80 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-stone font-medium">
             <span>Don't have an application submitted yet?</span>
             <Link to="/register" className="font-bold text-lavender hover:underline">
               Register for verification →
@@ -367,7 +413,7 @@ export default function AlumniLoginPage() {
         <div className="mt-8 text-center text-xs text-muted space-y-2">
           <p>
             Are you an administrator?{' '}
-            <Link to="/admin/login" className="text-ink font-semibold hover:text-lavender transition-colors">
+            <Link to="/admin/login" className="text-ink font-bold hover:text-lavender transition-colors">
               Sign in to Admin Portal
             </Link>
           </p>

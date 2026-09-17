@@ -10,7 +10,7 @@
   --color-ink-light: #2D204A;
   --color-ink-lighter: #423269;
 
-  /* Dignified, slightly darker royal lavender for highlights, buttons & tabs */
+  /* Dignified royal lavender for highlights, buttons & tabs */
   --color-vermilion: #583B9C;
   --color-vermilion-light: #4A2F8A;
 
@@ -18,12 +18,14 @@
   --color-lavender-dark: #462A82;
   --color-lavender-light: #6D4EB5;
   --color-lavender-soft: #EAE3F7;
+  --color-lavender-subtle: #F3EDFA;
   --color-lavender-border: #CEC2E8;
 
   /* Warm heritage gold */
   --color-gold: #B37D28;
   --color-gold-light: #D69C3D;
   --color-gold-soft: #FAF3E6;
+  --color-gold-border: #E8D3A7;
 
   /* Eye-comforting soft lavender-tinted off-white foundations */
   --color-parchment: #F6F3FB;
@@ -43,6 +45,10 @@
     box-sizing: border-box;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: var(--font-sans);
     background: var(--color-parchment);
@@ -51,6 +57,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
+    overflow-x: hidden;
   }
 
   #root {
@@ -61,19 +68,36 @@
   }
 
   ::selection {
-    background: var(--color-vermilion);
+    background: var(--color-lavender);
     color: white;
   }
 
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 400;
+    font-weight: 600;
     color: var(--color-ink);
-    line-height: 1.15;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
   }
 
   a {
     color: inherit;
+  }
+
+  /* Custom scrollbar for modern sleek aesthetic */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F0EAF8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C4B5E0;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9D84CF;
   }
 }
 
@@ -86,24 +110,83 @@
     font-family: var(--font-sans);
   }
 
+  /* Glassmorphism primitives */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(216, 204, 232, 0.8);
+    box-shadow: 0 10px 30px -8px rgba(35, 26, 56, 0.07);
+  }
+
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(216, 204, 232, 0.7);
+    box-shadow: 0 4px 20px -2px rgba(28, 20, 46, 0.04);
+  }
+
+  .glass-pill {
+    background: rgba(234, 227, 247, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(109, 78, 181, 0.25);
+  }
+
+  /* Micro-interactions & animations */
+  .card-lift {
+    transition: transform 0.26s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.26s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 35px -10px rgba(88, 59, 156, 0.12), 0 2px 10px -2px rgba(28, 20, 46, 0.05);
+  }
+
+  .btn-hover {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-hover:hover {
+    transform: translateY(-1.5px);
+  }
+  .btn-hover:active {
+    transform: translateY(0.5px);
+  }
+
   .animate-heroIn {
-    animation: heroIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: heroIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
   .animate-heroInDelay {
-    animation: heroIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+    animation: heroIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
+  }
+
+  .animate-pulseSlow {
+    animation: pulseSlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   @keyframes heroIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
+  @keyframes pulseSlow {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.75; transform: scale(1.05); }
+  }
+
+  /* Traditional Meitei Mayek Cultural Divider */
   .meitei-rule {
     display: flex;
     align-items: center;
-    gap: 12px;
-    opacity: 0.3;
+    gap: 14px;
+    opacity: 0.35;
   }
 
   .meitei-rule::before,
@@ -111,12 +194,12 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: currentColor;
+    background: linear-gradient(90deg, transparent, currentColor 20%, currentColor 80%, transparent);
   }
 
   .meitei-rule-diamond {
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
     background: currentColor;
     transform: rotate(45deg);
     flex-shrink: 0;

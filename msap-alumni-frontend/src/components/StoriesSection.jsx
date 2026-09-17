@@ -3,79 +3,99 @@ import { Link } from 'react-router-dom';
 const STORIES = [
   {
     id: 1,
-    title: 'From Pune to Silicon Valley: One Alumni\'s 30-Year Journey',
-    source: 'MSAP Alumni Report',
+    title: "From Pune to Silicon Valley: One Alumnus's 30-Year Journey",
+    category: "Alumni Spotlight",
+    readTime: "4 min read",
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop',
-    excerpt: 'How a small group of Manipuri students in Pune went on to lead careers across the globe — and what brought them back to give.',
+    excerpt: 'How a pioneering group of Manipuri graduates in Pune shaped careers across the global tech landscape — and what brought them back to mentor the next generation.',
+    author: 'Rajesh Sharma &middot; Class of 1994',
   },
   {
     id: 2,
     title: 'The Golden Jubilee: 200 Alumni, One Auditorium, 50 Years',
-    source: 'Alumni Magazine',
+    category: 'Celebration',
+    readTime: "5 min read",
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop',
-    excerpt: 'Over 200 alumni gathered at Symbiosis Ishanya Auditorium in Pune to mark half a century of community.',
+    excerpt: 'Over 200 alumni gathered at Symbiosis Ishanya Auditorium in Pune to celebrate half a century of community, shared memories, and student solidarity.',
+    author: 'Editorial Desk &middot; Pune Chapter',
   },
   {
     id: 3,
     title: 'Keeping Yaoshang Alive 1,200 km from Home',
-    source: 'Community Spotlight',
+    category: 'Culture & Tradition',
+    readTime: "3 min read",
     image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=500&fit=crop',
-    excerpt: 'Every March, Manipuris in Pune gather to light the Yaoshang — and prove that culture travels with people, not just places.',
+    excerpt: 'Every March, Manipuris in Pune gather to light the sacred Yaoshang — demonstrating how cultural bonds thrive across distance through community warmth.',
+    author: 'Culture Committee &middot; MSAP',
   },
 ];
 
 export default function StoriesSection() {
   return (
     <section className="max-w-6xl mx-auto px-5 py-16 md:py-24">
-      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 mb-10">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
         <div>
-          <span className="text-[11px] font-bold uppercase tracking-widest text-lavender block mb-1">
-            Voices & Memories
-          </span>
-          <h2 className="font-display text-ink text-2xl md:text-3xl font-semibold">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lavender-soft text-lavender text-xs font-bold uppercase tracking-wider mb-3 border border-lavender/25">
+            <span>📖</span> Chronicles & Milestones
+          </div>
+          <h2 className="font-display text-ink text-3xl sm:text-4xl font-bold tracking-tight">
             Stories from MSAP Alumni
           </h2>
-          <p className="text-muted text-sm mt-1">
-            Chronicles of journeys, achievements, and 50 years of friendship.
+          <p className="text-muted text-base mt-2 max-w-xl">
+            Journeys of leadership, lifelong friendships, and 50 years of unforgettable memories.
           </p>
         </div>
         <Link
           to="/stories"
-          className="text-lavender text-sm font-semibold hover:underline inline-flex items-center gap-1 group"
+          className="group inline-flex items-center gap-2 text-lavender font-bold text-sm hover:text-lavender-dark transition-colors shrink-0"
         >
-          View all stories
-          <span className="group-hover:translate-x-1 transition-transform">→</span>
+          <span>View all stories</span>
+          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
         </Link>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-3 gap-8">
         {STORIES.map((story) => (
           <Link
             key={story.id}
             to="/stories"
-            className="group bg-white border-2 border-parchment-dark hover:border-lavender rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col"
+            className="group card-lift bg-white border border-parchment-dark hover:border-lavender/40 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
           >
             <div className="aspect-[16/10] overflow-hidden bg-parchment-subtle relative">
               <img
                 src={story.image}
                 alt={story.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                loading="lazy"
               />
+              <div className="absolute top-3.5 left-3.5">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-lavender bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-lavender/20 shadow-sm">
+                  {story.category}
+                </span>
+              </div>
+              <div className="absolute bottom-3 right-3">
+                <span className="text-[10px] font-semibold text-white bg-black/50 backdrop-blur-md px-2.5 py-0.5 rounded-full">
+                  {story.readTime}
+                </span>
+              </div>
             </div>
+
             <div className="p-6 flex-1 flex flex-col justify-between">
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-widest text-lavender bg-lavender-soft px-3 py-1 rounded-full border border-lavender/30 inline-block mb-3">
-                  {story.source}
-                </span>
-                <h3 className="font-display text-ink text-xl font-bold leading-snug mb-2 group-hover:text-lavender transition-colors">
+                <p className="text-[11px] font-medium text-muted mb-2.5" dangerouslySetInnerHTML={{ __html: story.author }} />
+                <h3 className="font-display text-ink text-xl font-bold leading-snug mb-3 group-hover:text-lavender transition-colors">
                   {story.title}
                 </h3>
-                <p className="text-[14px] text-stone leading-relaxed font-medium line-clamp-3">
+                <p className="text-[14px] text-stone/90 leading-relaxed line-clamp-3 font-normal">
                   {story.excerpt}
                 </p>
               </div>
-              <div className="mt-5 pt-4 border-t border-parchment-dark text-xs font-bold text-lavender flex items-center gap-1.5">
-                Read full story <span className="group-hover:translate-x-1.5 transition-transform text-sm">→</span>
+
+              <div className="mt-6 pt-4 border-t border-parchment-dark/70 text-xs font-bold text-lavender flex items-center justify-between">
+                <span>Read Full Chronicle</span>
+                <span className="group-hover:translate-x-1.5 transition-transform text-base">→</span>
               </div>
             </div>
           </Link>
